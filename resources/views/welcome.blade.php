@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<<<<<<< HEAD
-    <div class="navbar-container">
-        
+<body class="bg-neutral-400">
+    <div class="bg-white h-[67px] flex">
+        <img src="{{ asset('assets/logo.jpg') }}" alt="" class="w-[148px] h-[26px] m-auto">
     </div>
-=======
-    <div class="navbar-container">THIMOKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK</div>
->>>>>>> 88e4150c140a657c2a0b709dcfea697cf286554e
 </body>
 </html>
