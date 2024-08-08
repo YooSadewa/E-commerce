@@ -7,8 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
     <div class="navbar-container">
         
     </div>
+=======
+    <div class="navbar-container">THIMOKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK</div>
+>>>>>>> 88e4150c140a657c2a0b709dcfea697cf286554e
 </body>
 </html>
