@@ -20,6 +20,12 @@
     color: #000;
     transition: background 0.2s;
 }
-/* #sidebar ul li a:hover {
-    background: #555;
-} */
+.dropdown-content {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.dropdown-content.open {
+    display: block;
+    max-height: 500px; 
+}

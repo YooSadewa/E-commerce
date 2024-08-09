@@ -11,6 +11,6 @@
 </head>
 <body  class="bg-[#D4D4D4]">
     <x-Navbar />
-    
+        
 </body>
 </html>

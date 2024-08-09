@@ -12,7 +12,13 @@
         </div> 
         <ul class="mt-4">
             <li><a href="#" class="py-2 px-4">Home</a></li>
-            <li><a href="#" class="py-2 px-4">About</a></li>
+            <li><a href="#" class="py-2 px-4" id="categories-toggle">Categories</a></li>
+            <div class="dropdown-content" id="categories-dropdown">
+                <a href="" class="py-2 px-4">Mouse</a>
+                <a href="" class="py-2 px-4">Keyboard</a>
+                <a href="" class="py-2 px-4">Audio</a>
+                <a href="" class="py-2 px-4">Gears</a>
+            </div>
             <li><a href="#" class="py-2 px-4">Services</a></li>
         </ul>
     </div>
@@ -23,6 +29,16 @@
         
         document.getElementById('close-menu').addEventListener('click', function() {
             document.getElementById('sidebar').style.transform = 'translateX(-100%)';
+        });
+
+        document.getElementById('categories-toggle').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const dropdown = document.getElementById('categories-dropdown');
+            if (dropdown.classList.contains('open')) {
+                dropdown.classList.remove('open');
+            } else {
+                dropdown.classList.add('open');
+            }
         });
     </script>
 </body>
