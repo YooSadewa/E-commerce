@@ -1,0 +1,25 @@
+#sidebar {
+    width: 197px;
+    height: 100%;
+    background-color: #FFF;
+    color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+#sidebar ul li a {
+    display: block;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: #000;
+    transition: background 0.2s;
+}
+/* #sidebar ul li a:hover {
+    background: #555;
+} */

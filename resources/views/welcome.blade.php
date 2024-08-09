@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-<body class="bg-neutral-400">
-    <div class="bg-white h-[67px] flex">
-        <img src="{{ asset('assets/logo.jpg') }}" alt="" class="w-[148px] h-[26px] m-auto">
-    </div>
+<body  class="bg-[#D4D4D4]">
+    <x-Navbar />
+    
 </body>
 </html>
