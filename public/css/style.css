@@ -1,3 +1,64 @@
+
+@media only screen and (max-width: 640px){
+    .hitam{
+        height: 320px;
+    }
+}
+@media only screen and (max-width: 600px){
+    .hitam{
+        height: 310px;
+    }
+}
+@media only screen and (max-width: 550px){
+    .hitam{
+        height: 300px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .hitam{
+        height: 290px;
+    }
+}
+@media only screen and (max-width: 475px){
+    .hitam{
+        height: 285px;
+    }
+}
+@media only screen and (max-width: 450px){
+    .hitam{
+        height: 275px;
+    }
+}
+@media only screen and (max-width: 425px){
+    .hitam{
+        height: 265px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .hitam{
+        height: 255PX;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 375px){
+    .hitam{
+        height: 240PX;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 350px){
+    .hitam{
+        height: 220PX;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 325px){
+    .hitam{
+        height: 200PX;
+        width: 100%;
+    }
+}
+
 #sidebar {
     width: 197px;
     height: 100%;
@@ -42,7 +103,7 @@
     margin-left: -50px;
 }
 .cart button i{
-    margin-left: 50%;
+    margin-left: 57%;
     color: red;
 }
 .cart{
@@ -53,4 +114,7 @@
 }
 .content label{
     left: 17%;
+}
+body ul{
+    z-index: 99;
 }

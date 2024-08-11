@@ -4,7 +4,7 @@
             <i id="menu-toggle" class="fa-solid fa-bars text-black text-xl cursor-pointer ml-[10px]"></i>
         </div>
         <img src="{{ asset('assets/logo.jpg') }}" alt="" class="w-[148px] h-[26px] mx-auto mx-auto lg:mx-0 lg:mr-auto">
-        <ul class="flex space-x-4 mt-4 hidden lg:flex mb-4 mr-4">
+        <ul class="flex space-x-4 mt-4 hidden lg:flex mb-4 mr-4 relative">
     <li><a href="#" class="py-2 px-4">Home</a></li>
     <li class="relative">
         <a href="#" class="py-2 px-4 hover:bg-gray-100" id="categories-toggle1">Categories</a>
