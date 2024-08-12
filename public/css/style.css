@@ -93,8 +93,7 @@
     max-height: 500px; 
 }
 .box{
-    border: #555 1px;
-    border-radius: 8px;
+    border: #555 0.4px;
 }
 .content input{
     width: 65%;

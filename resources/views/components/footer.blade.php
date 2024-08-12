@@ -14,11 +14,11 @@
         <a href="#"> <i class="fa-brands fa-instagram text-[25px] ml-2"></i> </a>
      </div>
      <p class="text-[18px] font-bold mt-2">Our Store</p>
-     <p class="mt-2 text-[16px]  font-light w-[350px] md:w-[700px] lg:w-[470px]  sm:w-[550px] xl:w-[580px]">Fantech Indonesia Sedayu Square Blok J No. 27 Jl. Lingkar Luar Barat Cengkareng - Jakarta Barat 11730</p>
+     <p class="mt-2 text-[16px]  font-light w-[300px] md:w-[700px] lg:w-[470px]  sm:w-[550px] xl:w-[580px]">Fantech Indonesia Sedayu Square Blok J No. 27 Jl. Lingkar Luar Barat Cengkareng - Jakarta Barat 11730</p>
      </div>
      <div class="box-2 lg:ml-12 xl:ml-20">
      <p class="text-[18px] font-bold mt-2">Dealer Welcome</p>
-     <p class="mt-2 text-[16px]  font-light w-[350px] md:w-[700px] lg:w-[470px] sm:w-[550px] xl:w-[580px]">CV. GOLDEN TECHNOLOGY INDO
+     <p class="mt-2 text-[16px]  font-light w-[300px] md:w-[700px] lg:w-[470px] sm:w-[550px] xl:w-[580px]">CV. GOLDEN TECHNOLOGY INDO
 Sedayu Square Blok J no. 26 Jl. Lingkar Luar Barat Cengkareng
 Jakarta Barat 11730
 sales@goldentech.id marketingfantech@gmail.com
