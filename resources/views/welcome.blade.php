@@ -50,9 +50,9 @@
       </div>
       </div>
     </div>
- <div  class="flex justify-between w-12 mx-auto pb-2">
-        <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 pb-2 " ></button>
-    <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full w-4 p-2"></button>
+ <div  class="flex justify-between w-10 md:w-12 mx-auto pb-2">
+        <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-2 md:w-4 p-1.5 md:p-2 " ></button>
+    <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full w-2 md:w-4 p-1.5 md:p-2"></button>
   </div>
     </div>
 
