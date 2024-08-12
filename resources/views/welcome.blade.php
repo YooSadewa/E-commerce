@@ -31,10 +31,11 @@
             <div class="cart bg-white flex ml-[4px] w-[40px] h-[40px] rounded-full">
             <button type="submit"><i class="fa-solid fa-cart-shopping"></i></button>
             </div>
-        </div>
+        </div>  
     </div>
 
-    <div class="carousel mt-6 mx-[30px]">
+    <div class="mx-[30px]">
+    <div class="carousel mt-6">
         <div id="slider-1" class="container mx-auto">
             <div class="hitam bg-cover bg-center sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] text-white py-24 px-10" style="background-image: url('/assets/collab.webp');">
             </div>
@@ -48,6 +49,10 @@
         </div>
       <br>
       </div>
+      </div>
+
+
+
       </div>
     </div>
  <div  class="flex justify-between w-10 md:w-12 mx-auto pb-2">
