@@ -28,7 +28,7 @@
                 <p class="text-[13px]">Search products</p>  
             </label>
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <div class="cart bg-white flex">
+            <div class="cart bg-white flex ml-[4px] w-[40px] h-[40px] rounded-full">
             <button type="submit"><i class="fa-solid fa-cart-shopping"></i></button>
             </div>
         </div>
@@ -44,7 +44,7 @@
 
 
       <div id="slider-2" class="container mx-auto">
-        <div class="hitam bg-cover bg-center sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] text-white py-24 px-10" style="background-image: url('/assets/collab.webp');">
+        <div class="hitam bg-cover bg-center sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] text-white py-24 px-10" style="background-image: url('/assets/merdeka.webp');">
         </div>
       <br>
       </div>
