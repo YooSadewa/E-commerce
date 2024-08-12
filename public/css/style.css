@@ -1,60 +1,60 @@
 
 @media only screen and (max-width: 640px){
     .hitam{
-        height: 320px;
+        height: 300px;
     }
 }
 @media only screen and (max-width: 600px){
     .hitam{
-        height: 310px;
+        height: 290px;
     }
 }
 @media only screen and (max-width: 550px){
     .hitam{
-        height: 300px;
+        height: 270px;
     }
 }
 @media only screen and (max-width: 500px){
     .hitam{
-        height: 290px;
+        height: 250px;
     }
 }
 @media only screen and (max-width: 475px){
     .hitam{
-        height: 285px;
+        height: 245px;
     }
 }
 @media only screen and (max-width: 450px){
     .hitam{
-        height: 275px;
+        height: 235px;
     }
 }
 @media only screen and (max-width: 425px){
     .hitam{
-        height: 265px;
+        height: 225px;
     }
 }
 @media only screen and (max-width: 400px){
     .hitam{
-        height: 255PX;
+        height: 215PX;
         width: 100%;
     }
 }
 @media only screen and (max-width: 375px){
     .hitam{
-        height: 240PX;
+        height: 200PX;
         width: 100%;
     }
 }
 @media only screen and (max-width: 350px){
     .hitam{
-        height: 220PX;
+        height: 190PX;
         width: 100%;
     }
 }
 @media only screen and (max-width: 325px){
     .hitam{
-        height: 200PX;
+        height: 170PX;
         width: 100%;
     }
 }
