@@ -1,5 +1,5 @@
 <body>
-    <div class="bg-white h-[67px] flex items-center justify-between px-4 lg:justify-start">
+    <div class="bg-white h-[67px] flex items-center justify-between px-4 lg:justify-start fixed w-full top-0 ">
         <div class="flex items-center lg:hidden">
             <i id="menu-toggle" class="fa-solid fa-bars text-black text-xl cursor-pointer ml-[10px]"></i>
         </div>
