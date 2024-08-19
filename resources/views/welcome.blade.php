@@ -14,7 +14,7 @@
     <script src="{{ asset('js/main.js') }}"></script>
 </head>
 
-<body class="bg-[#F4F5F6]">
+<body class="bg-[#F4F5F6] overflow-x-hidden">
     <x-Navbar />
 
     <div class="content">
