@@ -35,7 +35,7 @@
                     </div>
                     <p class="text-[10px] sm:text-[11px] md:text-[16px] font-bold">Rp. 299.000</p>
                 </div>
-                <div class="card-footer relative alia mt-1.5 w-[90px] sm:w-[152px] sm:mt-7 sm:left-[47%] md:w-[230px] md:bottom-[95%] md:left-[47%] lg:bottom-[30%] lg:left-[57%]">
+                <div class="card-footer relative alia mt-1.5 w-[90px] sm:w-[152px] sm:mt-2 sm:left-[47%] md:w-[230px] md:bottom-[95%] md:left-[47%] lg:bottom-[30%] lg:left-[57%]">
                     <p class="text-[5px] sm:text-[6px] font-sans flex justify-end mr-0.5 md:text-[10px]">10rb+ Terjual</p>
                     <div class="beli w-[90px] h-[19px] bg-[#FF0000] rounded-[5px] flex items-center justify-center font-sans sm:w-[152px] sm:h-[25px]  md:w-[230px] md:h-[30px] lg:rounded-[10px]">
                         <p class="text-[8px] md:text-[12px] text-[white] font-semibold sm:text-[10px]">Masukkan Ke Troli</p>
@@ -48,7 +48,7 @@
                 <div class="card-img mt-[2.5px] flex justify-center">
                     <img class="w-[90px] rounded-[15px] h-[85px] object-cover sm:w-[145px] sm:h-[100px] md:w-[212px] md:h-[180px] lg:w-[280px] lg:h-[250px] lg:mt-2" src="{{asset('assets/all.jpg')}}" alt="">
                 </div>
-                <div class="card-header w-[88px] ml-1.5 sm:mt-4 sm:w-[140px] md:w-[205px] lg:w-[280px] lg:ml-3">
+                <div class="card-header w-[88px] ml-1.5 sm:mt-4 sm:w-[140px] md:w-[205px] lg:w-[280px] lg:ml-3 ">
                     <p class="text-[8px] sm:text-[11px] md:text-[15px] lg:text-[16px] font-semibold">Fantech X MAHA5 ALL TALENT</p>
                     <div class="flex justify-between sm:mt-1 md:mt-2">
                         <p class="text-[red] text-[7px] font-bold md:text-[12px]">In Stock</p>
