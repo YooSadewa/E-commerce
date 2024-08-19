@@ -23,7 +23,7 @@ Sedayu Square Blok J no. 26 Jl. Lingkar Luar Barat Cengkareng
 Jakarta Barat 11730
 sales@goldentech.id marketingfantech@gmail.com
 Text for more in Sales 1: +62 852-8333-3267 Sales 2: +62 811-1903-2720</p>
-<p class="mt-6 text-[12px] md:text-[14px] lg:text-[16px]  font-light w-full mb-4 lg:mt-[70px]">Copyright © 2023 Fantech. All Rights Reserved</p>
+<p class="mt-6 text-[12px] md:text-[14px] lg:text-[16px]  font-light w-full mb-4 lg:mt-[70px]">Copyright © 2024 Fantech. All Rights Reserved</p>
 </div>
         </div>
         <div class="w-full h-[15px] bg-[red]"></div>
