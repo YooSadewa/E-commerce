@@ -14,13 +14,19 @@
 </head>
 <body class="bg-[#D4D4D4]">
     <x-Navbar />
-    <div class="bg-[#FFF] w-[400px] h-[400px] m-auto mt-[12px] pt-[10px] rounded-[12px] mt-[80px]">
-        <img src="{{asset('assets/alia.jpg')}}" alt="" class="w-[380px] h-[190px] object-cover m-auto rounded-[12px]">
-        <div class="w-[380px] flex flex-row mt-[10px] gap-[2px] mx-[10px] overflow-hidden">
-            <button><p class=""><</p></button>
-            <img src="{{asset('assets/alia.jpg')}}" alt="" class="w-[175px] h-[175px] rounded-[12px]">
-            <img src="{{asset('assets/alia.jpg')}}" alt="" class="w-[175px] h-[175px] rounded-[12px]">
-            <img src="{{asset('assets/alia.jpg')}}" alt="" class="w-[175px] h-[175px] rounded-[12px]">
+    <div class="bg-[#FFF] w-[400px] h-[400px] m-auto mt-[12px] pt-[10px] rounded-[12px] mt-[80px]
+                md:w-[754px] md:h-[754px] md:rounded-[24px]">
+        <img src="{{asset('assets/alia.jpg')}}" alt="" class="w-[380px] h-[190px] object-cover m-auto rounded-[12px]
+        md:w-[737px] md:h-[422px] md:rounded-[24px]">
+        <div class="w-[380px] flex flex-row mt-[10px] gap-[2px] mx-[10px] overflow-hidden
+        md:w-[737px] md:mt-[16px]">
+            <button><p class="md:text-[50px]"><</p></button>
+            <img src="{{asset('assets/alia.jpg')}}" alt="" class="w-[175px] h-[175px] rounded-[12px]
+            md:w-[288px] md:h-[274px] md:rounded-[24px]">
+            <img src="{{asset('assets/alia.jpg')}}" alt="" class="w-[175px] h-[175px] rounded-[12px]
+            md:w-[288px] md:h-[274px] md:rounded-[24px]">
+            <img src="{{asset('assets/alia.jpg')}}" alt="" class="w-[175px] h-[175px] rounded-[12px]
+            md:w-[288px] md:h-[274px] md:rounded-[24px]">
         </div>
     </div>
     <div class="w-[380px] m-auto mt-[10px]">
