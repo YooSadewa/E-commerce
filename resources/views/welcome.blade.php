@@ -18,7 +18,7 @@
     <x-Navbar />
 
     <div class="content">
-        <div class="relative mt-8 flex justify-center">
+        <div class="relative mt-[100px] flex justify-center">
             <input
                 type="text"
                 id="search"
