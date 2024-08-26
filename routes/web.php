@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,3 +18,6 @@ Route::get('/signup', function () {
 Route::get('/infoproduct', function () {
     return view('infoproduct');
 })->name('infoproduct');
+
+Route::resource('barang', BarangController::class);
+

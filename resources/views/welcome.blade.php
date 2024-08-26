@@ -66,6 +66,7 @@
        
     <x-Footer />
 
+    <a href="{{ route('barang.index')}}">Barang</a>
 </body>
 
 </html>
