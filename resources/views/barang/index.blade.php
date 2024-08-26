@@ -30,7 +30,6 @@
         <table class="min-w-full bg-white border border-gray-300">
             <thead>
                 <tr class="bg-gray-800 text-white">
-                    <th class="py-2 px-4">ID Barang</th>
                     <th class="py-2 px-4">Nama Barang</th>
                     <th class="py-2 px-4">Harga Barang</th>
                     <th class="py-2 px-4">Stok</th>
@@ -42,7 +41,6 @@
             <tbody>
                 @foreach($barangs as $barang)
                     <tr class="border-b border-gray-300">
-                        <td class="py-2 px-4">{{ $barang->id_barang }}</td>
                         <td class="py-2 px-4">{{ $barang->nama_barang }}</td>
                         <td class="py-2 px-4">{{ $barang->harga_barang }}</td>
                         <td class="py-2 px-4">{{ $barang->stok }}</td>
