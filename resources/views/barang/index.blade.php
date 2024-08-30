@@ -12,12 +12,65 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    {{-- <script>
+        module.exports = {
+            theme: {
+              extend: {
+                colors: {
+                  customRed: '#E3001A',
+                  customBlack: '#000000',
+                },
+              },
+            },
+          }
+    </script> --}}
 </head>
 
-<body class="bg-[#F4F5F6] overflow-x-hidden">
+<body class="bg-gradient-to-b from-[#420008] to-[#000000] overflow-x-hidden">
     <x-Navbar />
 
-    @extends('layouts.app')
+    <div class="w-full h-full my-[63px] mt-[110px] flex">
+        <form action="" class="relative w-[345px] flex flex-col m-auto h-[645px] bg-[#FFF] px-[32px] pt-[45px] gap-[40px] rounded-[12px]">
+            
+            <div class="relative">
+                <input type="text" id="nama_barang" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500  mt-[5px]" placeholder=" " />
+                <label for="nama_barang" class="absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-3">
+                    Nama Barang
+                </label>
+            </div>
+    
+            <div class="relative">
+                <input type="number" id="harga_barang" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px]" placeholder=" " />
+                <label for="harga_barang" class="absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-3">
+                    Harga Barang
+                </label>
+            </div>
+    
+            <div class="relative">
+                <input type="number" id="stok_barang" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500  mt-[5px]" placeholder=" " />
+                <label for="stok_barang" class="absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-3">
+                    Stok Barang
+                </label>
+            </div>
+    
+            <div class="relative">
+                <textarea id="deskripsi_barang" cols="30" rows="10" class="peer border-b-[1px] border-black w-full h-[220px] placeholder-transparent focus:outline-none focus:border-blue-500  mt-[5px]" placeholder=" "></textarea>
+                <label for="deskripsi_barang" class="absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-4">
+                    Deskripsi Barang
+                </label>
+            </div>
+            
+            <input type="submit" value="SUBMIT" name="submit" class="px-[60px] py-[10px] bg-[#FFF] hover:bg-[#E3001A] border-[2px] duration-[0.2s] border-[#E3001A] w-fit mx-auto mt-[30px] rounded-[15px] text-[#E3001A] hover:text-[#FFF] font-bold">
+        </form>
+    </div>
+    
+    
+    
+
+    <div class="w-full h-[15px] bg-[#E3001A]"></div>
+
+
+    {{-- @extends('layouts.app')
 
     @section('content')
     <div class="container mx-auto p-6">
@@ -66,7 +119,7 @@
         </table>
     </div>
     @endsection
-    
+     --}}
 
 </body>
 
