@@ -20,11 +20,3 @@ Route::get('/infoproduct', function () {
 })->name('infoproduct');
 
 Route::resource('barang', BarangController::class);
-
-Route::get('/editproduct', function () {
-    return view('barang.edit');
-})->name('editproduct');
-
-Route::get('/tambahproduct', function () {
-    return view('barang.tambah');
-})->name('tambahproduct');
