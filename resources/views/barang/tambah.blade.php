@@ -69,17 +69,17 @@
     
                     <!-- Deskripsi Barang -->
                     <div class="relative">
-                        <textarea id="deskripsi_barang" cols="30" rows="10" class="peer border-b-[1px] border-black w-full h-[65px] placeholder-transparent focus:outline-none focus:border-blue-500 -mt-[15px] md:text-[24px] md:h-[120px] lg:max-h-[300px] lg:min-h-[37px] lg:h-[37px] lg:" placeholder=" "></textarea>
+                        <textarea id="deskripsi_barang" cols="30" rows="10" class="peer border-b-[1px] border-black w-full h-[65px] placeholder-transparent focus:outline-none focus:border-blue-500 -mt-[15px] md:text-[24px] md:h-[120px] lg:h-[100px] lg:-mt-[3px]" placeholder=" "></textarea>
                         <label for="deskripsi_barang" class="absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-4 -mt-[20px]
                                                                 md:text-[24px] md:peer-focus:-translate-x-5
-                                                                lg:mt-0">
+                                                                lg:-mt-[5px]">
                             Deskripsi Barang
                         </label>
                     </div>
     
                     <!-- Kategori Barang -->
                     <div class="relative">
-                        <select id="kategori_barang" name="kategori_barang" class="border-b-[1px] border-black w-full focus:outline-none focus:border-blue-500 mt-[5px] appearance-none md:text-[24px]">
+                        <select id="kategori_barang" name="kategori_barang" class="border-b-[1px] border-black w-full focus:outline-none focus:border-blue-500 mt-[5px] appearance-none md:text-[24px] lg:">
                             <option value="" disabled selected hidden>Kategori Barang</option>
                             <option value="mouse">Mouse</option>
                             <option value="keyboard">Keyboard</option>
@@ -92,7 +92,7 @@
     
             <!-- Submit Button -->
             <input type="submit" value="SUBMIT" name="submit" class="px-[60px] py-[10px] bg-[#FFF] hover:bg-[#E3001A] border-[2px] duration-[0.2s] border-[#E3001A] w-fit mx-auto mt-[30px] rounded-[15px] text-[#E3001A] hover:text-[#FFF] font-bold
-                                                                md:px-[120px] md:py-[20px] md:rounded-[30px] md:text-[24px] md:-mt-[30px] lg:w-[300px] lg:mt-[40px]">
+                                                                md:px-[120px] md:py-[20px] md:rounded-[30px] md:text-[24px] md:-mt-[30px] lg:w-[300px] lg:mt-[40px] lg:px-0">
         </form>
     </div>
     
