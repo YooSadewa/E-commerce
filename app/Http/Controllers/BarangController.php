@@ -19,7 +19,7 @@ class BarangController extends Controller
     
     public function create()
     {
-        return view('admin.tambah'); // Adjust if necessary
+        return view('barang.tambah'); // Adjust if necessary
     }
     
     public function store(Request $request)

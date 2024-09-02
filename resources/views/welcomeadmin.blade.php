@@ -15,7 +15,7 @@
 </head>
 
 <body class="bg-[#F4F5F6] overflow-x-hidden">
-    <x-Navbar />
+    <x-Navbaradmin />
 
     <div class="content">
         <div class="relative mt-[100px] flex justify-center">
