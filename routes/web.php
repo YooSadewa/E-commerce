@@ -31,3 +31,11 @@ Route::resource('barang', BarangController::class);
 
 // Mengarahkan /admin/infoproduct ke BarangController@index
 Route::get('/admin/infoproduct', [BarangController::class, 'index'])->name('admin.infoproduct');
+
+
+use App\Http\Controllers\AccountController;
+
+Route::get('/profile', [AccountController::class, 'show'])->name('profile.show');
+Route::get('/profile/edit', [AccountController::class, 'edit'])->name('profile.edit');
+Route::post('/profile/update', [AccountController::class, 'update'])->name('profile.update');
+Route::post('/profile/update-password', [AccountController::class, 'updatePassword'])->name('profile.updatePassword');
