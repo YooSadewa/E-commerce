@@ -11,7 +11,7 @@
     <script src="{{ asset('js/main.js') }}"></script>
 </head>
 
-<body class="overflow-hidden">
+<body class="bg-gradient-to-b from-[#420008] to-[#000000] overflow-hidden">
     <x-Navbar />
     {{-- @extends('layouts.app') --}}
 
