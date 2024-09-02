@@ -8,10 +8,23 @@ use App\Models\Admin;
 
 class AdminController extends Controller
 {
+    public function show($id)
+    {
+        $admin = Admin::findOrFail($id); // Use findOrFail for better error handling
+        return view('admin.show', compact('admin'));
+    }
+
+    public function profile()
+    {
+        $admins = Admin::all(); // Fetch all admins
+        return view('admin.profile', compact('admins'));
+    }
+
+
     public function index() {
         $admins = Admin::all();
         return view('admin.profile', compact('admins'));
-    }
+    }    
 
     public function edit(Admin $admin) {
         return view('admin.editprofile', compact('admin'));

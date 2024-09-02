@@ -8,10 +8,7 @@ use App\Models\Barang;
 
 class BarangController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function showInfoProduct()
     {
         $barangs = Barang::all();
         return view('admin.infoproduct', compact('barangs')); // Update view to use infoproduct

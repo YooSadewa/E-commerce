@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link hre="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
@@ -106,7 +106,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-full border-t-[2px] border-black bg-[#FFF] fixed bottom-0 right-0">
+        <div class="w-full border-t-[2px] border-black bg-[#FFF] bottom-0 right-0">
             <a href="{{ route('barang.edit', $barang->id_barang) }}" class="flex justify-center m-[20px] py-[7px] px-[25px] bg-[#FF0000] my-[9px] rounded-[24px] font-semibold text-[#FFF] md:text-[24px] md:py-[11px] md:px-[71px] md:my-[15px] md:m-[44px] md:rounded-[26px] lg:py-[16px] lg:px-[167px] lg:my-[22px] lg:m-[100px] lg:rounded-[42px] lg:text-[34px]">Edit Product</a>
             <div class="w-full h-[15px] bg-[#E3001A]">
         </div>

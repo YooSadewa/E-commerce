@@ -17,7 +17,7 @@
                 <div class="card-footer relative alia mt-1.5 w-[90px] sm:w-[152px] sm:mt-7 sm:left-[47%] md:w-[230px] md:bottom-[95%] md:left-[47%] lg:bottom-[30%] lg:left-[57%]">
                     <p class="text-[5px] sm:text-[6px] font-sans flex justify-end mr-0.5 md:text-[10px]">10rb+ Terjual</p>
                     <div class="beli w-[90px] h-[19px] bg-[#FF0000] rounded-[5px] flex items-center justify-center font-sans sm:w-[152px] sm:h-[25px]  md:w-[230px] md:h-[30px] lg:rounded-[10px]">
-                        <p class="text-[8px] md:text-[12px] text-[white] font-semibold sm:text-[10px]">Masukkan Ke Troli</p>
+                        <a href="{{ route('infoproduct') }}" class="text-[8px] md:text-[12px] text-[white] font-semibold sm:text-[10px]">Info Product</a>
                     </div>
                 </div>
             </div>
