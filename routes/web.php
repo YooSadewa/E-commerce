@@ -28,3 +28,9 @@ Route::get('/editproduct', function () {
 Route::get('/tambahproduct', function () {
     return view('barang.tambah');
 })->name('tambahproduct');
+
+Route::resource('footers', FooterController::class);
+
+Route::get('/editfooter', function () {
+    return view('footer.edit');
+})->name('editfooter');
