@@ -22,11 +22,12 @@
                     <a class="w-[97px] md:w-[185px] lg:w-[160px] h-full bg-[#E3001A] text-white text-center items-center flex justify-center ml-0 rounded-full">Log in</a>
                     <a href="{{route('signup')}}" class="flex-grow text-center">Sign Up</a>
                 </div>
-                <form action="" class="flex flex-col justify-center mt-[30px] md:mt-[105px] lg:mt-[75px]">
-                    <input type="text" placeholder="Username" class="border-b-[2px] border-black w-[280px] md:w-[525px] lg:w-[600px] pb-[5px] mx-auto mb-[55px] md:mb-[105px] lg:mb-[72px] md:text-[20px]">
-                    <input type="text" placeholder="Password" class="border-b-[2px] border-black w-[280px] md:w-[525px] lg:w-[600px] pb-[5px] mx-auto md:text-[20px]">
+                <form action="{{ url('/login/admin') }}" method="POST" class="flex flex-col justify-center mt-[30px] md:mt-[105px] lg:mt-[75px]">
+                    @csrf
+                    <input type="text" name="username" placeholder="Username" class="border-b-[2px] border-black w-[280px] md:w-[525px] lg:w-[600px] pb-[5px] mx-auto mb-[55px] md:mb-[105px] lg:mb-[72px] md:text-[20px]">
+                    <input type="password" name="password" placeholder="Password" class="border-b-[2px] border-black w-[280px] md:w-[525px] lg:w-[600px] pb-[5px] mx-auto md:text-[20px]">
                     <a href="#" class="text-end mr-[25px] md:mr-[50px] lg:mr-[65px] mt-[15px] md:text-[24px] lg:text-[20px]">Forgot My Password?</a>
-                    <input type="submit" value="Submit" class="border-black border-[1px] w-[175px] md:w-[325px] lg:w-[250px] mx-auto rounded-[15px] md:rounded-[24px] mt-[30px] md:mt-[70px] h-[40px] md:h-[75px] lg:h-[55px] md:text-[24px] lg:text-[18px] font-semibold">
+                    <input type="submit" name="submit" value="Submit" class="border-black border-[1px] w-[175px] md:w-[325px] lg:w-[250px] mx-auto rounded-[15px] md:rounded-[24px] mt-[30px] md:mt-[70px] h-[40px] md:h-[75px] lg:h-[55px] md:text-[24px] lg:text-[18px] font-semibold">
                 </form>
             </div>
         </div>

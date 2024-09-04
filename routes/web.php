@@ -12,9 +12,8 @@ Route::get('/admin', function () {
     return view('welcomeadmin');
 });
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+Route::get('/login', [AdminController::class,'indexlogin']);
+Route::post('/login/admin', [AdminController::class,'login']);
 
 Route::get('/signup', function () {
     return view('signup');
@@ -26,7 +25,7 @@ Route::get('/admin/profile', function () {
 
 Route::resource('barang', BarangController::class);
 
-Route::get('/admin/{id}', [AdminController::class, 'show'])->name('admin.show');
+Route::get('/admin/{id_admin}', [AdminController::class, 'show'])->name('admin.show');
 
 Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
 

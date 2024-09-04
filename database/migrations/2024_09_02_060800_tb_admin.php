@@ -15,6 +15,7 @@ return new class extends Migration
             $table->increments('id_admin');
             $table->string('nama_admin')->unique();
             $table->string('username');
+            $table->string('password');
             $table->string('email');
             $table->integer('telp');
             $table->binary('foto_admin');
