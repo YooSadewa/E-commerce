@@ -13,6 +13,9 @@
         }
     </style>
 </head>
+
+
+
 <body class="">
     <div class="background w-100% h-100vh bg-cover bg-no-repeat justify-center" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/assets/bglogin.jpg');">
         <div class="form-container w-[330px] md:w-[620px] lg:w-[730px] h-[100vh] m-auto flex flex-col">

@@ -8,11 +8,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', function () {
-    return view('welcomeadmin');
-});
+// Route::get('/admin', function () {
+//     return view('welcomeadmin');
+// });
 
-Route::get('/login', [AdminController::class,'indexlogin']);
+Route::get('/admin', function() {
+    return view('welcomeadmin');
+})->name('admin');
+
+Route::get('/login', [AdminController::class,'indexlogin'])->name('login');
+
+Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+
 Route::post('/login/admin', [AdminController::class,'login']);
 
 Route::get('/signup', function () {

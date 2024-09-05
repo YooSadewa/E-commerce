@@ -69,18 +69,22 @@ class AdminController extends Controller
             'password' => 'required',
         ]);
     
-        // Query ke database menggunakan DB facade
-        $admin = DB::table('tb_admin')->where('username', $request->username)->first();
+        $admin = Admin::where('username', $request->username)
+                      ->where('password', $request->password)
+                      ->first();
     
-        // Memeriksa apakah password cocok menggunakan Hash facade
-        if ($admin && Hash::check($request->password, $admin->password)) {
-            // Set session
-            session(['admin' => $admin]);
-    
-            return redirect()->route('admin.profile')->with('success', 'Berhasil Login');
+        if ($admin) {
+            // Simpan informasi admin ke session
+            session(['admin_id' => $admin->id_admin]);
+            return redirect()->route('admin');
         } else {
-            return redirect('login')->withErrors('Username atau Password Salah');
+            return redirect('/login')->withErrors("Username atau password salah");
         }
+    }
+
+    public function logout() {
+        session()->forget('admin_id');
+        return redirect()->route('admin');
     }
     
 
