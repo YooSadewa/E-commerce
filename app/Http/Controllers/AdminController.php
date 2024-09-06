@@ -80,7 +80,7 @@ class AdminController extends Controller
         if ($admin) {
             // Simpan informasi admin ke session
             session(['admin_id' => $admin->id_admin]);
-            return redirect()->route('admin');
+            return redirect()->route('welcomeadmin');
         } else {
             return redirect('/login')->withErrors("Username atau password salah");
         }
@@ -88,7 +88,7 @@ class AdminController extends Controller
 
     public function logout() {
         session()->forget('admin_id');
-        return redirect()->route('admin');
+        return redirect()->route('welcomeadmin');
     }
     
 
