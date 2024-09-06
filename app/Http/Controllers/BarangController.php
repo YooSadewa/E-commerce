@@ -5,13 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Barang;
+use Illuminate\Support\Facades\DB;
 
 class BarangController extends Controller
 {
-    public function showInfoProduct()
+    public function index()
     {
-        $barangs = Barang::all();
-        return view('admin.infoproduct', compact('barangs')); // Update view to use infoproduct
+        // Mengambil semua barang dari database
+        $barangs = Barang::all(); 
+
+        return view('components.card', compact('barangs')); // Ganti 'your_view_name' dengan nama view yang sesuai
+    }
+
+    public function show($id_barang)
+    {
+        $barang = DB::table('tb_barang')->where('id_barang', $id_barang)->first();
+
+    // Tampilkan ke view infoproduct.blade.php
+        return view('admin.infoproduct', ['barang' => $barang]);
     }
     
     public function create()

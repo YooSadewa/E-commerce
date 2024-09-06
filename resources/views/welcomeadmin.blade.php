@@ -62,8 +62,7 @@
             <h1 class="text-[16px] font-sans:inter font-medium sm:text-[20px] md:text-[28px] lg:text-[35px] xl:text-[40px]">Official Collaboration MAHA5 Fantech</h1>
         </div>
 
-        <x-card />
-       
+            <x-card :barang="$barang"/>  
     <x-Footer />
 </body>
 

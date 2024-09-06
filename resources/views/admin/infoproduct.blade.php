@@ -14,7 +14,6 @@
 </head>
 <body class="bg-[#D4D4D4] m-0 p-0">
     <x-Navbar />
-    @foreach($barangs as $barang)
         <div class="bg-[#FFF] w-[400px] h-[400px] m-auto mt-[12px] pt-[10px] rounded-[12px] mt-[80px]
         md:w-[754px] md:h-[754px] md:rounded-[24px]
         lg:w-[1240px] lg:h-[458px] lg:rounded-[36px] lg:flex lg:flex-row lg:items-center lg:pt-0">
@@ -110,6 +109,5 @@
             <a href="{{ route('barang.edit', $barang->id_barang) }}" class="flex justify-center m-[20px] py-[7px] px-[25px] bg-[#FF0000] my-[9px] rounded-[24px] font-semibold text-[#FFF] md:text-[24px] md:py-[11px] md:px-[71px] md:my-[15px] md:m-[44px] md:rounded-[26px] lg:py-[16px] lg:px-[167px] lg:my-[22px] lg:m-[100px] lg:rounded-[42px] lg:text-[34px]">Edit Product</a>
             <div class="w-full h-[15px] bg-[#E3001A]">
         </div>
-    @endforeach
     </body>
 </html>

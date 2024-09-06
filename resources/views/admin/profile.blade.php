@@ -25,10 +25,10 @@
             @endif
         </div>
         <div class="flex flex-col mt-[75px] font-semibold md:text-[20px] justify-center">
-            <div class="flex w-full h-[55px] bg-[#FFF] items-center gap-[25px] pl-[15px] rounded-[18px] mb-[5px] lg:w-[600px]">
+            <a href="{{route('admin.editprofile')}}" class="flex w-full h-[55px] bg-[#FFF] items-center gap-[25px] pl-[15px] rounded-[18px] mb-[5px] lg:w-[600px]">
                 <i class="fa-solid fa-user"></i>
                 <p>Profile Update</p>
-            </div>
+            </a>
             <div class="flex w-full h-[55px] bg-[#FFF] items-center gap-[25px] pl-[15px] rounded-[18px] mb-[5px] lg:w-[600px]">
                 <i class="fa-solid fa-lock"></i>
                 <p>Password Update</p>

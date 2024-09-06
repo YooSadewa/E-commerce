@@ -28,7 +28,7 @@ class AdminController extends Controller
         return view('admin.profile', compact('admins'));
     }    
 
-    public function edit(Admin $admin) {
+    public function indexUpdate(Admin $admin) {
         return view('admin.editprofile', compact('admin'));
     }
 
@@ -60,6 +60,10 @@ class AdminController extends Controller
     }
 
     public function indexlogin() {
+        return view("loginadmin");
+    }
+
+    public function indexLoginUser() {
         return view("login");
     }
 

@@ -8,19 +8,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/admin', function () {
-//     return view('welcomeadmin');
-// });
+Route::get('/admin', [BarangController::class, 'index'])->name('welcomeadmin');
 
-Route::get('/admin', function() {
-    return view('welcomeadmin');
-})->name('admin');
+Route::get('/loginadmin', [AdminController::class,'indexlogin'])->name('login');
 
-Route::get('/login', [AdminController::class,'indexlogin'])->name('login');
+Route::get('/login', [AdminController::class,'indexloginUser'])->name('loginuser');
 
 Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
 
 Route::post('/login/admin', [AdminController::class,'login']);
+
+Route::get('/admin/edit', [AdminController::class, 'indexUpdate'])->name('admin.editprofile');
 
 Route::get('/signup', function () {
     return view('signup');
@@ -38,5 +36,4 @@ Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.p
 
 Route::get('/profile', [AdminController::class, 'show'])->name('profile');
 
-// Mengarahkan /admin/infoproduct ke BarangController@index
-Route::get('/infoproduct', [BarangController::class, 'showInfoProduct'])->name('infoproduct');
+Route::get('/infoproduct/{id_barang}', [BarangController::class, 'show'])->name('infoproduct.show');
