@@ -14,7 +14,7 @@ class BarangController extends Controller
         // Mengambil semua barang dari database
         $barangs = Barang::all(); 
 
-        return view('components.card', compact('barangs')); // Ganti 'your_view_name' dengan nama view yang sesuai
+        return view('welcomeadmin', compact('barangs')); // Ganti 'your_view_name' dengan nama view yang sesuai
     }
 
     public function show($id_barang)
