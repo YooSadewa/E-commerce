@@ -24,7 +24,7 @@
                 <!-- Container for Nama, Harga, Stok -->
                 <div class="flex flex-col gap-[35px] md:gap-[60px] lg:w-1/2">
                     <div class="relative">
-                        <input type="text" id="nama_barang" name="nama_barang" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px] md:text-[24px]" placeholder=" " />
+                        <input type="text" id="nama_barang" name="nama_barang" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px] md:text-[24px]" placeholder=" " required />
                         <label for="nama_barang" class="absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-3
                                                     md:text-[24px] md:peer-focus:-translate-x-5">
                             Nama Barang
@@ -32,7 +32,7 @@
                     </div>
                     
                     <div class="relative">
-                        <input type="text" id="harga_barang" name="harga_barang" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px] md:text-[24px]" placeholder=" " />
+                        <input type="text" id="harga_barang" name="harga_barang" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px] md:text-[24px]" placeholder=" " required />
                         <label for="harga_barang" class="absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-3
                                                         md:text-[24px] md:peer-focus:-translate-x-5">
                             Harga Barang
@@ -40,7 +40,7 @@
                     </div>
                     
                     <div class="relative">
-                        <input type="text" id="stok_barang" name="stok" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px] md:text-[24px]" placeholder=" " />
+                        <input type="text" id="stok_barang" name="stok" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px] md:text-[24px]" placeholder=" " required />
                         <label for="stok_barang" class="absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-3
                                                         md:text-[24px] md:peer-focus:-translate-x-5">
                             Stok Barang
@@ -56,13 +56,13 @@
                         <div class="w-full h-[25px] md:h-[35px] md:rounded-[18px] text-[12px] md:text-[18px] rounded-[12px] border-black border-[1px] text-center flex items-center justify-center text-[#000] cursor-pointer" onclick="document.getElementById('foto_barang').click()">
                             File Chosen
                         </div>
-                        <input type="file" id="foto_barang" name="foto_utama" class="hidden" onchange="document.getElementById('file-name').textContent = this.files[0].name;" />
+                        <input type="file" id="foto_barang" name="foto_utama" class="hidden" onchange="document.getElementById('file-name').textContent = this.files[0].name;" required />
                         <div id="file-name" class="mt-2 text-[#000]"></div>
                     </div>
     
                     <!-- Deskripsi Barang -->
                     <div class="relative">
-                        <textarea id="deskripsi_barang" name="deskripsi_barang" cols="30" rows="10" class="peer border-b-[1px] border-black w-full h-[130px] placeholder-transparent focus:outline-none focus:border-blue-500 -mt-[15px] md:text-[24px] md:h-[170px] lg:h-[35px] lg:-mt-[1px]" placeholder=" "></textarea>
+                        <textarea id="deskripsi_barang" name="deskripsi_barang" cols="30" rows="10" class="peer border-b-[1px] border-black w-full h-[130px] placeholder-transparent focus:outline-none focus:border-blue-500 -mt-[15px] md:text-[24px] md:h-[170px] lg:h-[35px] lg:-mt-[1px]" placeholder=" " required></textarea>
                         <label for="deskripsi_barang" class="absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-4 -mt-[20px]
                                                                 md:text-[24px] md:peer-focus:-translate-x-5
                                                                 lg:-mt-[5px] lg:h-[65px] lg:peer-focus:-translate-x-6">
@@ -72,7 +72,7 @@
     
                     <!-- Kategori Barang -->
                     <div class="relative">
-                        <select id="kategori" name="kategori" class="mt-[20px] md:mt-[40px] border-b-[1px] border-black w-full focus:outline-none focus:border-blue-500 appearance-none md:text-[24px] lg:mt-[65px]">
+                        <select id="kategori" name="kategori" class="mt-[20px] md:mt-[40px] border-b-[1px] border-black w-full focus:outline-none focus:border-blue-500 appearance-none md:text-[24px] lg:mt-[65px]" required>
                             <option value="" disabled selected hidden>Kategori Barang</option>
                             <option value="mouse">Mouse</option>
                             <option value="keyboard">Keyboard</option>
