@@ -26,9 +26,22 @@
                 </div>
                 <form action="{{ url('/login/admin') }}" method="POST" class="flex flex-col justify-center mt-[30px] md:mt-[105px] lg:mt-[75px]">
                     @csrf
-                    <input type="text" name="username" placeholder="Username" class="border-b-[2px] border-black w-[280px] md:w-[525px] lg:w-[600px] pb-[5px] mx-auto mb-[55px] md:mb-[105px] lg:mb-[72px] md:text-[20px]">
-                    <input type="password" name="password" placeholder="Password" class="border-b-[2px] border-black w-[280px] md:w-[525px] lg:w-[600px] pb-[5px] mx-auto md:text-[20px]">
-                    <input type="submit" name="submit" value="Submit" class="border-black border-[1px] w-[175px] md:w-[325px] lg:w-[250px] mx-auto rounded-[15px] md:rounded-[24px] mt-[30px] md:mt-[70px] h-[40px] md:h-[75px] lg:h-[55px] md:text-[24px] lg:text-[18px] font-semibold">
+                    <div class="relative px-[30px] md:px-[50px] mt-[20px] md:mt-0 mb-[40px] md:mb-[60px]">
+                        <input type="text" id="username" name="username" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px] md:text-[24px]" placeholder=" " required />
+                        <label for="username" class="pl-[30px] md:pl-[50px] absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-8
+                                                    md:text-[24px] md:peer-focus:-translate-x-[60px] lg:peer-focus:-translate-x-[75px]">
+                            Username
+                        </label>
+                    </div>
+                    <div class="relative px-[30px] md:px-[50px]">
+                        <input type="text" id="password" name="password" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px] md:text-[24px]" placeholder=" " required />
+                        <label for="password" class="pl-[30px] md:pl-[50px] absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-8
+                                                    md:text-[24px] md:peer-focus:-translate-x-[60px] lg:peer-focus:-translate-x-[75px]">
+                            Password
+                        </label>
+                    </div>
+                    <input type="submit" value="SUBMIT" class="px-[60px] py-[10px] bg-[#FFF] hover:bg-[#E3001A] border-[2px] duration-[0.2s] border-[#E3001A] w-fit mx-auto mt-[30px] rounded-[15px] text-[#E3001A] hover:text-[#FFF] font-bold
+                                                                md:px-[120px] md:py-[20px] md:rounded-[30px] md:text-[24px] md:mt-[100px] lg:w-[300px] lg:mt-[60px] lg:px-0 lg:mb-[40px]">
                 </form>
             </div>
         </div>

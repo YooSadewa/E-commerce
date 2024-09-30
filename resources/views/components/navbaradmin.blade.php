@@ -33,10 +33,10 @@
             <div class="box border-solid">
             <li><a href="#" class="py-2 px-4 hover:bg-gray-100" id="categories-toggle">Categories</a></li>
             <div class="dropdown-content" id="categories-dropdown">
-                <a href="" class="py-2 px-4 block">Mouse</a>
-                <a href="" class="py-2 px-4 block">Keyboard</a>
-                <a href="" class="py-2 px-4 block">Audio</a>
-                <a href="" class="py-2 px-4 block">Gears</a>
+                <a href="{{ url('category/mouse') }}" class="py-2 px-4 block">Mouse</a>
+                <a href="{{ url('category/keyboard') }}" class="py-2 px-4 block">Keyboard</a>
+                <a href="{{ url('category/audio') }}" class="py-2 px-4 block">Audio</a>
+                <a href="{{ url('category/gears') }}" class="py-2 px-4 block">Gears</a>
             </div>
         </div>
         <div class="box border-solid">

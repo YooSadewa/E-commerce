@@ -16,6 +16,22 @@ class BarangController extends Controller
 
         return view('welcomeadmin', compact('barangs')); // Ganti 'your_view_name' dengan nama view yang sesuai
     }
+    
+    public function showCategory($category)
+    {
+        $barangs = DB::table('tb_barang')->where('kategori', $category)->get();
+        return view('category', compact('barangs', 'category'));
+    }
+
+    public function indexSearch(Request $request)
+    {
+        $search = $request->input('search'); // Mendapatkan input pencarian
+        
+        // Mencari produk berdasarkan nama
+        $barangs = Barang::where('nama_barang', 'LIKE', '%' . $search . '%',)->get();
+        
+        return view('category', compact('barangs')); // Ganti 'your_view_name' dengan nama view yang sesuai
+    }
 
     public function show($id_barang)
     {
@@ -40,23 +56,30 @@ class BarangController extends Controller
             'kategori' => 'required',
             'foto_utama' => 'nullable|file'
         ]);
-    
+
         $fotoUtamaPath = null;
+
+        // Check if the file was uploaded
         if ($request->hasFile('foto_utama')) {
-            $fotoUtamaPath = $request->file('foto_utama')->store('barang_images', 'public');
-        }
-    
+            $file = $request->file('foto_utama');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('barang_images', $fileName, 'public');  // Ubah 'uploads/products' menjadi 'barang_images'
+            $fotoUtamaPath = '/storage/' . $filePath;
+        }        
+
+        // Save the product data
         Barang::create([
             'nama_barang' => $validated['nama_barang'],
             'harga_barang' => $validated['harga_barang'],
             'stok' => $validated['stok'],
             'deskripsi_barang' => $validated['deskripsi_barang'],
             'kategori' => $validated['kategori'],
-            'foto_utama' => $fotoUtamaPath,
+            'foto_utama' => $fotoUtamaPath, // Save the image path or null
         ]);
-    
+
         return redirect()->route('barang.index')->with('success', 'Barang berhasil ditambahkan.');
     }
+
     
     public function edit(Barang $barang)
     {

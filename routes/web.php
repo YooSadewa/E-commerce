@@ -37,3 +37,7 @@ Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.p
 Route::get('/profile', [AdminController::class, 'show'])->name('profile');
 
 Route::get('/infoproduct/{id_barang}', [BarangController::class, 'show'])->name('infoproduct.show');
+
+Route::get('/category/{category}', [BarangController::class, 'showCategory'])->name('category.show');
+
+Route::get('/search', [BarangController::class, 'indexSearch'])->name('product.search');
