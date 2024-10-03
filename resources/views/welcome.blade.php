@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <div class="mx-[20px]">
+    <div class="">
         <div class="carousel mt-6">
             <div id="slider-1" class="container mx-auto">
                 <div class="hitam bg-cover bg-center sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] text-white py-24 px-10" style="background-image: url('/assets/collab.webp');">

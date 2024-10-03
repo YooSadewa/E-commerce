@@ -28,16 +28,16 @@ class BarangController extends Controller
         $search = $request->input('search'); // Mendapatkan input pencarian
         
         // Mencari produk berdasarkan nama
-        $barangs = Barang::where('nama_barang', 'LIKE', '%' . $search . '%',)->get();
+        $barangs = Barang::where('nama_barang', 'LIKE', '%' . $search . '%')->get();
         
-        return view('category', compact('barangs')); // Ganti 'your_view_name' dengan nama view yang sesuai
+        return view('search', compact('barangs')); // Ganti 'your_view_name' dengan nama view yang sesuai
     }
 
     public function show($id_barang)
     {
         $barang = DB::table('tb_barang')->where('id_barang', $id_barang)->first();
 
-    // Tampilkan ke view infoproduct.blade.php
+        // Tampilkan ke view infoproduct.blade.php
         return view('admin.infoproduct', ['barang' => $barang]);
     }
     
@@ -80,7 +80,6 @@ class BarangController extends Controller
         return redirect()->route('barang.index')->with('success', 'Barang berhasil ditambahkan.');
     }
 
-    
     public function edit(Barang $barang)
     {
         return view('barang.edit', compact('barang'));
@@ -95,34 +94,44 @@ class BarangController extends Controller
             'harga_barang' => 'required',
             'stok' => 'required|integer',
             'deskripsi_barang' => 'required',
-            'kategori' => 'nullable',
+            'kategori' => 'required',
             'foto_utama' => 'nullable|file'
         ]);
-    
+
+        // Update the image if a new one is uploaded
         if ($request->hasFile('foto_utama')) {
+            // Delete the old image if it exists
             if ($barang->foto_utama) {
-                Storage::delete('public/' . $barang->foto_utama);
+                Storage::disk('public')->delete(str_replace('/storage/', '', $barang->foto_utama));
             }
-    
-            $fotoUtamaPath = $request->file('foto_utama')->store('barang_images', 'public');
-            $barang->foto_utama = $fotoUtamaPath;
+
+            $file = $request->file('foto_utama');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('barang_images', $fileName, 'public');
+            $barang->foto_utama = '/storage/' . $filePath;
         }
-    
+
+        // Update the product data
         $barang->nama_barang = $validated['nama_barang'];
         $barang->harga_barang = $validated['harga_barang'];
         $barang->stok = $validated['stok'];
         $barang->deskripsi_barang = $validated['deskripsi_barang'];
-    
+        $barang->kategori = $validated['kategori'];
         $barang->save();
-    
-        return redirect()->route('barang.index')->with('success', 'Barang berhasil diupdate.');
+
+        return redirect()->route('barang.index')->with('success', 'Barang berhasil diperbarui.');
     }
-    
+
     public function destroy($id)
     {
         $barang = Barang::findOrFail($id);
+        
+        // Delete the image if it exists
+        if ($barang->foto_utama) {
+            Storage::disk('public')->delete(str_replace('/storage/', '', $barang->foto_utama));
+        }
+        
         $barang->delete();
-    
         return redirect()->route('barang.index')->with('success', 'Barang berhasil dihapus.');
     }
 }

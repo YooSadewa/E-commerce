@@ -8,10 +8,10 @@
             <li class="relative">
                 <a href="#" class="py-2 hover:bg-gray-100" id="categories-toggle1">Categories</a>
                 <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 dropdown-content" id="categories-dropdown1">
-                    <a href="#" class="py-2 block hover:bg-gray-100 ml-1">Mouse</a>
-                    <a href="#" class="py-2 block hover:bg-gray-100 ml-1">Keyboard</a>
-                    <a href="#" class="py-2 block hover:bg-gray-100 ml-1">Audio</a>
-                    <a href="#" class="py-2 block hover:bg-gray-100 ml-1">Gears</a>
+                    <a href="{{ route('category.show', 'mouse') }}" class="py-2 block hover:bg-gray-100 ml-1">Mouse</a>
+                    <a href="{{ route('category.show', 'keyboard') }}" class="py-2 block hover:bg-gray-100 ml-1">Keyboard</a>
+                    <a href="{{ route('category.show', 'audio') }}" class="py-2 block hover:bg-gray-100 ml-1">Audio</a>
+                    <a href="{{ route('category.show', 'gears') }}" class="py-2 block hover:bg-gray-100 ml-1">Gears</a>
                 </div>
             </li>
             <li><a href="#" class="py-2">About Us</a></li>

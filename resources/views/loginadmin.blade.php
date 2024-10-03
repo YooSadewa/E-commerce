@@ -34,7 +34,7 @@
                         </label>
                     </div>
                     <div class="relative px-[30px] md:px-[50px]">
-                        <input type="text" id="password" name="password" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px] md:text-[24px]" placeholder=" " required />
+                        <input type="password" id="password" name="password" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px] md:text-[24px]" placeholder=" " required />
                         <label for="password" class="pl-[30px] md:pl-[50px] absolute text-base text-[#000] duration-300 transform -translate-y-6 scale-75 top-1 left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:-translate-x-8
                                                     md:text-[24px] md:peer-focus:-translate-x-[60px] lg:peer-focus:-translate-x-[75px]">
                             Password
