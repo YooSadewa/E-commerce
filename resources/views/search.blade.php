@@ -44,7 +44,7 @@
             </form>
     </div>
     <div class="flex justify-between mx-[20px] my-[10px]">
-        {{-- <p class="items-center flex"><a href="" class="mr-[6px]">Home</a> / {{ ucfirst($search) }}</p> --}}
+        <p class="items-center flex"><a href="" class="mr-[6px]">Home</a> / {{ ucfirst($search) }}</p>
         <div class="text-center">
             <p class="text-[12px]">Filter by Price</p>
             <form action="">

@@ -30,9 +30,10 @@ class BarangController extends Controller
         // Mencari produk berdasarkan nama
         $barangs = Barang::where('nama_barang', 'LIKE', '%' . $search . '%')->get();
         
-        return view('search', compact('barangs')); // Ganti 'your_view_name' dengan nama view yang sesuai
+        return view('search', compact('barangs', 'search')); // Mengirim $barangs dan $search ke view
     }
-
+    
+    
     public function show($id_barang)
     {
         $barang = DB::table('tb_barang')->where('id_barang', $id_barang)->first();
