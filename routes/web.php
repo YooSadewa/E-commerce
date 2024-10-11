@@ -41,3 +41,11 @@ Route::get('/infoproduct/{id_barang}', [BarangController::class, 'show'])->name(
 Route::get('/category/{category}', [BarangController::class, 'showCategory'])->name('category.show');
 
 Route::get('/search', [BarangController::class, 'indexSearch'])->name('product.search');
+
+Route::get('/editpw', function () {
+    return view('admin.editpass');
+})->name('edit');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
