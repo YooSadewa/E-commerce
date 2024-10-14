@@ -5,6 +5,7 @@
         </div>
         <img src="{{ asset('assets/logo.jpg') }}" alt="" class="w-[148px] h-[26px] mx-auto mx-auto lg:mx-0 lg:mr-auto">
         <ul class="flex space-x-4 mt-4 hidden lg:flex mb-4 mr-4 relative">
+            <li><a href="{{route('welcomeadmin')}}" class="py-2">Home</a></li>
             <li class="relative">
                 <a href="#" class="py-2 hover:bg-gray-100" id="categories-toggle1">Categories</a>
                 <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 dropdown-content" id="categories-dropdown1">
@@ -14,7 +15,7 @@
                     <a href="{{ route('category.show', 'gears') }}" class="py-2 block hover:bg-gray-100 ml-1">Gears</a>
                 </div>
             </li>
-            <li><a href="#" class="py-2">About Us</a></li>
+            <li><a href="{{route('index.about')}}" class="py-2">About Us</a></li>
             <li><a href="#" class="py-2 mr-2">Contacts</a></li>
         </ul>
         @if (session('admin_id'))
@@ -29,7 +30,7 @@
             <i id="close-menu" class="fa-solid fa-times text-2xl cursor-pointer"></i>
         </div> 
         <ul class="mt-4">
-            <li><a href="#" class="py-2 px-4">Home</a></li>
+            <li><a href="{{route('welcomeadmin')}}" class="py-2 px-4">Home</a></li>
             <div class="box border-solid">
             <li><a href="#" class="py-2 px-4 hover:bg-gray-100" id="categories-toggle">Categories</a></li>
             <div class="dropdown-content" id="categories-dropdown">
@@ -42,7 +43,7 @@
         <div class="box border-solid">
             <li><a href="#" class="py-2 px-4 hover:bg-gray-100" id="categories-toggle2">Company</a></li>
             <div class="dropdown-content" id="categories-dropdown2">
-                <a href="" class="py-2 px-4 block">About Us</a>
+                <a href="{{route('index.about')}}" class="py-2 px-4 block">About Us</a>
                 <a href="" class="py-2 px-4 block">Contacts</a>
             </div>
         </div>

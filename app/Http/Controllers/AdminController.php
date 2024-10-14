@@ -28,36 +28,99 @@ class AdminController extends Controller
         return view('admin.profile', compact('admins'));
     }    
 
-    public function indexUpdate(Admin $admin) {
+    public function edit($id) {
+        $admin = Admin::where('id_admin', $id)->first();
         return view('admin.editprofile', compact('admin'));
     }
 
-    public function update(Request $request, $id) {
-        $admin = Admin::findOrFail($id);
+    public function editPass($id) {
+        $admin = Admin::where('id_admin', $id)->first();
+        return view('admin.editpass', compact('admin'));
+    }
 
+    public function update(Request $request, $id)
+    {
+        // Validasi input termasuk foto_admin
         $validated = $request->validate([
+            'nama_admin' => 'required',
             'username' => 'required',
-            'telp' => 'required',
             'email' => 'required',
-            'foto_admin' => 'nullable|file'
+            'telp' => 'required|integer',
+            'foto_admin' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // validasi foto admin
         ]);
 
+        // Cek apakah ada data yang sama (kecuali data yang sedang diedit)
+        $exists = Admin::where('nama_admin', $request->nama_admin)
+                        ->where('username', $request->username)
+                        ->where('email', $request->email)
+                        ->where('telp', $request->telp)
+                        ->where('id_admin', '!=', $id) // mengecualikan data yang sedang di-edit
+                        ->exists();
+
+        // Jika kombinasi sudah ada, kembalikan dengan error
+        if ($exists) {
+            return redirect()->route('welcomeadmin')->withErrors(['duplicate' => 'Data sudah ada.']);
+        }
+
+        // Cari admin yang akan di-update berdasarkan id_admin
+        $admin = Admin::where('id_admin', $id)->firstOrFail();
+
+        // Jika ada file foto yang diunggah, proses foto_admin
         if ($request->hasFile('foto_admin')) {
-            if ($admin->foto_admin) {
-                Storage::delete('public/' . $admin->foto_admin);
+            // Hapus foto lama jika ada
+            if ($admin->foto_admin && file_exists(public_path('uploads/' . $admin->foto_admin))) {
+                unlink(public_path('uploads/' . $admin->foto_admin));
             }
 
-            $fotoAdmin = $request->file('foto_admin')->store('admin_images', 'public');
-            $admin->foto_admin = $fotoAdmin;
-        }
-        $admin->username = $validated['username'];
-        $admin->telp = $validated['telp'];
-        $admin->email = $validated['email'];
-        
-        $admin->save();
+            // Simpan foto baru
+            $file = $request->file('foto_admin');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads'), $filename);
 
-        return redirect()->route('admin.profile') -> with('success', 'Akun Berhasil Di Update');
+            // Simpan nama file ke dalam validasi data
+            $validated['foto_admin'] = $filename;
+        }
+
+        // Update admin dengan data dari form
+        $admin->update($validated);
+
+        // Redirect ke halaman welcome dengan pesan sukses
+        return redirect()->route('welcomeadmin')->with('Success', 'Data Berhasil Diperbarui');
     }
+
+    public function updatePass(Request $request, $id)
+{
+    $request->validate([
+        'password' => 'required',
+        'email' => 'required|email',
+        'new_password' => 'required',
+    ]);
+
+    $admin = Admin::find($id);
+
+    if (!$admin) {
+        return back()->withErrors(['email' => 'Admin tidak ditemukan.']);
+    }
+
+    if ($request->email !== $admin->email) {
+        return back()->withErrors(['email' => 'Email tidak sesuai dengan yang terdaftar di akun ini.']);
+    }
+
+    // Directly compare the plain text password
+    if ($request->password !== $admin->password) {
+        return back()->withErrors(['password' => 'Password saat ini salah.']);
+    }
+
+    // Update the password with the new plain text value
+    $admin->password = $request->new_password;
+    
+    if ($admin->save()) {
+        return redirect()->route('admin.profile')->with('success', 'Password berhasil diperbarui.');
+    } else {
+        return back()->withErrors(['error' => 'Gagal memperbarui password. Silakan coba lagi.']);
+    }
+}
+    
 
     public function indexlogin() {
         return view("loginadmin");
@@ -91,5 +154,7 @@ class AdminController extends Controller
         return redirect()->route('welcomeadmin');
     }
     
-
+    public function indexAbout() {
+        return view('about');
+    }
 }

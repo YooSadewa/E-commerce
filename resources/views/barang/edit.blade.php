@@ -15,7 +15,7 @@
     <x-Navbar />
     {{-- @extends('layouts.app') --}}
 
-    <div class="w-full h-full my-[63px] mt-[20px] flex">
+    <div class="w-full h-full md:mt-[100px] md:mb-[200px] lg:mt-[40px] lg:mb-0 flex">
         <form  action="{{ route('barang.update', $barang->id_barang) }}" method="POST" enctype="multipart/form-data" class="relative w-[345px] flex flex-col m-auto h-[645px] bg-[#FFF] px-[32px] pt-[45px] gap-[40px] rounded-[12px]
                                    md:w-[700px] md:h-[1000px] md:px-[50px] md:pt-[90px] md:gap-[80px]
                                    lg:w-[1200px] lg:h-[570px] lg:flex-row lg:justify-between lg:gap-[60px]">
@@ -63,6 +63,5 @@
                                                                      md:px-[120px] md:py-[20px] md:rounded-[30px] md:text-[24px] md:mt-[10px] lg:absolute lg:bottom-[30px] lg:left-1/2 lg:transform lg:-translate-x-1/2">
         </form>
     </div>
-    
-    <div class="w-full h-[15px] bg-[#E3001A] -mt-[100px]"></div>
+    <div class="w-full h-[15px] bg-[#E3001A] bottom-0"></div>
 </body>

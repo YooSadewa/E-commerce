@@ -18,7 +18,8 @@ Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
 
 Route::post('/login/admin', [AdminController::class,'login']);
 
-Route::get('/admin/edit', [AdminController::class, 'indexUpdate'])->name('admin.editprofile');
+Route::get('/admin/editprofile/{id}', [AdminController::class, 'edit'])->name('admin.editprofile');
+Route::put('/admin/editprofile/{id}', [AdminController::class, 'update'])->name('admin.update');
 
 Route::get('/signup', function () {
     return view('signup');
@@ -42,10 +43,7 @@ Route::get('/category/{category}', [BarangController::class, 'showCategory'])->n
 
 Route::get('/search', [BarangController::class, 'indexSearch'])->name('product.search');
 
-Route::get('/editpw', function () {
-    return view('admin.editpass');
-})->name('edit');
+Route::get('/admin/editpass/{id}', [AdminController::class, 'editPass'])->name('admin.editpass');
+Route::put('/admin/updatePass/{id}', [AdminController::class, 'updatePass'])->name('admin.updatePass');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::get('/about', [AdminController::class, 'indexAbout'])->name('index.about');

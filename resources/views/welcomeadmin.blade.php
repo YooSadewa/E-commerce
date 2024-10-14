@@ -37,6 +37,17 @@
             </form>
     </div>
 
+    @if ($errors->any())
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
     <div class="">
         <div class="carousel mt-6">
             <div id="slider-1" class="container mx-auto">

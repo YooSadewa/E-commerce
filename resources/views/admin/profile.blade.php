@@ -18,21 +18,21 @@
 
 <div class="lg:flex lg:flex-col">
         <h1 class="text-center text-[#FFF] font-semibold  md:text-[24px]">Profile</h1>
-        <img src="{{ asset('assets/ambatukam.jpg')}}" alt="" class="w-[120px] m-auto rounded-full mt-[25px] md:w-[200px]">
+        <img src="{{ asset('uploads/' . $admin->foto_admin) }}" alt="Foto Admin" class="w-[120px] h-[120px] m-auto rounded-full mt-[25px] md:w-[200px] md:h-[200px]">
             @if ($admin)
             <h5 class="text-center text-[#FFF] mt-[5px] text-[24px] md:mt-[15px] md:text-[26px]">{{$admin->nama_admin}}</h5>
             <p class="text-center text-[#FFF] md:text-[20px]">{{$admin->telp}}</p>
             @endif
         </div>
         <div class="flex flex-col mt-[75px] font-semibold md:text-[20px] justify-center">
-            <a href="{{route('admin.editprofile')}}" class="flex w-full h-[55px] bg-[#FFF] items-center gap-[25px] pl-[15px] rounded-[18px] mb-[5px] lg:w-[600px]">
+            <a href="{{route('admin.editprofile', $admin->id_admin)}}" class="flex w-full h-[55px] bg-[#FFF] items-center gap-[25px] pl-[15px] rounded-[18px] mb-[5px] lg:w-[600px]">
                 <i class="fa-solid fa-user"></i>
                 <p>Profile Update</p>
             </a>
-            <div class="flex w-full h-[55px] bg-[#FFF] items-center gap-[25px] pl-[15px] rounded-[18px] mb-[5px] lg:w-[600px]">
+            <a href="{{route('admin.editpass', $admin->id_admin)}}" class="flex w-full h-[55px] bg-[#FFF] items-center gap-[25px] pl-[15px] rounded-[18px] mb-[5px] lg:w-[600px]">
                 <i class="fa-solid fa-lock"></i>
                 <p>Password Update</p>
-            </div>
+            </a>
             <a href="{{ route('barang.create') }}" class="flex w-full h-[55px] bg-[#FFF] items-center gap-[25px] pl-[15px] rounded-[18px] mb-[5px] lg:w-[600px]">
                 <i class="fa-solid fa-arrow-up-from-bracket"></i>
                 <p>Add Product</p>
