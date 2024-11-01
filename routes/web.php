@@ -47,3 +47,4 @@ Route::get('/admin/editpass/{id}', [AdminController::class, 'editPass'])->name('
 Route::put('/admin/updatePass/{id}', [AdminController::class, 'updatePass'])->name('admin.updatePass');
 
 Route::get('/about', [AdminController::class, 'indexAbout'])->name('index.about');
+Route::get('/kontak', [AdminController::class, 'indexKontak'])->name('index.kontak');

@@ -17,10 +17,10 @@
 
 <body class="bg-gray-100">
     <x-Navbaradmin />
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto p-4 mt-20">
         <!-- Breadcrumb -->
         <div class="text-gray-500 mb-4">
-            <a href="#" class="hover:underline">Home</a> / <span>About Us</span>
+            <p class="text-gray-600"><span class="font-semibold">Home</span> / <span class="font-semibold">About Us</span></p>
         </div>
 
        <!-- Banner Section -->

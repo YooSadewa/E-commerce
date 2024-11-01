@@ -157,4 +157,9 @@ class AdminController extends Controller
     public function indexAbout() {
         return view('about');
     }
+
+    public function indexKontak() {
+        return view('kontak');
+    }
 }
+
