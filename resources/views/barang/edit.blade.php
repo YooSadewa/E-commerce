@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-gradient-to-b from-[#420008] to-[#000000]">
-    <x-Navbar />
+    <x-NavbarAdmin />
     {{-- @extends('layouts.app') --}}
 
     <div class="w-full h-full md:mt-[100px] md:mb-[200px] lg:mt-[40px] lg:mb-0 flex">

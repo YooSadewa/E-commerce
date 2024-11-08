@@ -45,12 +45,6 @@
     </div>
     <div class="flex justify-between mx-[20px] my-[10px]">
         <p class="items-center flex"><a href="" class="mr-[6px]">Home</a> / {{ ucfirst($category) }}</p>
-        <div class="text-center">
-            <p class="text-[12px]">Filter by Price</p>
-            <form action="">
-                <input type="range" name="price" id="">
-            </form>
-        </div>
     </div>
     <div class="flex flex-wrap justify-evenly">
         @foreach ($barangs as $barang)          
@@ -75,7 +69,7 @@
                 <p class="text-[11px] md:text-[20px] lg:text-[30px]">Rp. {{$barang->harga_barang}}</p>
                 <a href="" class="text-[5px] px-[5px] font-semibold bg-[#D9D9D9] rounded-[11px] flex items-center md:text-[14px] text-center lg:hidden">Masukkan ke Troli</a>
             </div>
-            <a href="" class="font-semibold bg-[#D9D9D9] rounded-[11px] flex items-center md:hidden hidden text-center lg:flex lg:pl-[63px] lg:py-[10px] lg:rounded-[12px] lg:mt-[20px]">Masukkan ke Troli</a>
+            <a href="{{ route('infoproduct.show', $barang->id_barang) }}" class="font-semibold bg-[#D9D9D9] rounded-[11px] flex items-center md:hidden hidden text-center lg:flex lg:pl-[88px] lg:py-[10px] lg:rounded-[12px] lg:mt-[20px]">Info Product</a>
         </div>
         @endforeach
     </div>    

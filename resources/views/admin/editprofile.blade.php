@@ -14,7 +14,7 @@
 </head>
 
 <body class="bg-gradient-to-b from-[#420008] to-[#000000]">
-    <x-Navbar />
+    <x-NavbarAdmin />
 
     <div class="w-full h-full my-[100px] md:mt-[100px]  lg:my-[100px] flex">
         <form action="{{ route('admin.update', $admin->id_admin) }}" method="POST" enctype="multipart/form-data" class="relative w-[345px] flex flex-col m-auto h-[700px] bg-[#FFF] px-[32px] pt-[45px] gap-[30px] rounded-[12px]

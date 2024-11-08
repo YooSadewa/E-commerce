@@ -13,31 +13,20 @@
     <script src="{{ asset('js/main.js') }}"></script>
 </head>
 <body class="bg-[#D4D4D4] m-0 p-0">
-    <x-Navbar />
+    <x-NavbarAdmin />
         <div class="bg-[#FFF] w-[400px] h-[400px] m-auto mt-[12px] pt-[10px] rounded-[12px] mt-[80px]
         md:w-[754px] md:h-[754px] md:rounded-[24px]
         lg:w-[1240px] lg:h-[458px] lg:rounded-[36px] lg:flex lg:flex-row lg:items-center lg:pt-0">
 
         <!-- Large image -->
-        <img src="{{ asset('storage/' . $barang->foto_utama) }}" alt="" class="w-[380px] h-[190px] object-cover m-auto rounded-[12px]
+        <img src="{{ $barang->foto_utama ? asset($barang->foto_utama) : asset('assets/alia.jpg') }}" 
+     alt="Product Image" 
+     class="p-[10px] w-[380px] h-[190px] object-cover m-auto rounded-[12px]
             md:w-[737px] md:h-[422px] md:rounded-[24px]
             lg:w-[440px] lg:h-[440px] lg:rounded-[36px] lg:ml-0 lg:order-2">
 
+
         <!-- Container for small images -->
-        <div class="w-[380px] flex flex-row mt-[10px] gap-[2px] mx-[10px] overflow-hidden
-            md:w-[737px] md:mt-[16px]
-            lg:w-[140px] lg:flex lg:flex-col lg:my-auto lg:order-1 lg:ml-[10px]">
-            <button><p class="md:text-[50px] lg:hidden"><</p></button>
-            <img src="{{asset('assets/alia.jpg')}}" alt="" class="w-[175px] h-[175px] rounded-[12px]
-                md:w-[288px] md:h-[274px] md:rounded-[24px]
-                lg:w-[145px] lg:h-[145px] lg:rounded-[36px]">
-            <img src="{{asset('assets/alia.jpg')}}" alt="" class="w-[175px] h-[175px] rounded-[12px]
-                md:w-[288px] md:h-[274px] md:rounded-[24px]
-                lg:w-[145px] lg:h-[145px] lg:rounded-[36px]">
-            <img src="{{asset('assets/alia.jpg')}}" alt="" class="w-[175px] h-[175px] rounded-[12px]
-                md:w-[288px] md:h-[274px] md:rounded-[24px]
-                lg:w-[145px] lg:h-[145px] lg:rounded-[36px]">
-        </div>
 
         <!-- Text Content -->
         <div class="w-[380px] m-auto mt-[20px]
@@ -63,10 +52,7 @@
 
         <div class="w-full m-auto bg-[#FFF] rounded-[12px] min-h-[360px] p-[15px] border-b-[1px] border-black mt-[180px] md:mt-[260px] lg:mt-[80px] lg:w-[1240px] md:rounded-[24px] md:p-[25px] lg:p-[50px] lg:rounded-[36px]">
             <h1 class="font-semibold md:text-[24px] lg:text-[36px]">Description</h1>
-            <p class="font-light text-[12px] mt-[16px] md:text-[18px]">Only real Fantech products give gamers the best competitive edge. Using a legitimate Fantech Gaming Gear product compared to a poorly-made fake or copy can be the difference between winning and losing at your favorite games.
-
-                Register your Fantech product below for peace of mind, and to be notified when new firmware updates or other great product news is available.
-                Only real Fantech products give gamers the best competitive edge. Using a legitimate Fantech Gaming Gear product compared to a poorly-made fake or copy can be the difference between winning and losing at your favorite games. Register your Fantech product below for peace of mind, and to be notified when new firmware updates or other great product news is available.</p>
+            <p class="font-light text-[12px] mt-[16px] md:text-[18px]">{{ $barang->deskripsi_barang }}</p>
         </div>
         <div class="w-full m-auto bg-[#FFF] mb-[100px] md:mb-[150px] lg:mb-[200px] md:pb-[20px] rounded-[12px] min-h-[360px] border-t-[1px] border-black md:rounded-[24px] md:min-h-[525px] md:rounded-[36px] lg:w-[1240px]">
             <h1 class="font-semibold text-[15px] m-[15px] md:text-[24px] md:m-[25px] lg:ml-[50px] lg:text-[36px]">Rating Produk</h1>

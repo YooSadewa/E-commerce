@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body class="bg-gradient-to-b from-[#420008] to-[#000000] overflow-hidden">
+    <x-NavbarAdmin />
     <div class="w-[345px] h-[480px] mx-auto mt-[120px] mb-[227px] md:w-[700px] lg:flex lg:w-[1000px] lg:gap-[100px]">
         @php
             $admin = \App\Models\Admin::find(session('admin_id'));

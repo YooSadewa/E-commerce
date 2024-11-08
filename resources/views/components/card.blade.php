@@ -8,7 +8,9 @@
             @foreach($barangs->take(2) as $barang)
             <div class="card border-[1px] rounded-[12px] border-gray-200 bg-white p-4 shadow-md">
                 <div class="card-img">
-                    <img class="rounded-[12px] object-cover w-full h-[150px]" src="{{ asset('assets/alia.jpg') }}" alt="">
+                    <img class="rounded-[12px] object-cover w-full h-[150px]" 
+                         src="{{ $barang->foto_utama ? asset($barang->foto_utama) : asset('assets/alia.jpg') }}" 
+                         alt="{{ $barang->nama_barang }}">
                 </div>
                 <div class="card-body mt-4">
                     <p class="font-semibold text-lg">{{ $barang->nama_barang }}</p>
@@ -30,12 +32,14 @@
             </div>
             @endforeach
         </div>
-    
+        
         <!-- Third product card on the right with height spanning two rows -->
         @if($barangs->count() > 2)
         <div class="card border-[1px] rounded-[12px] border-gray-200 bg-white p-4 shadow-md row-span-2 h-[740px] md:h-[751px] lg:h-[751px]">
             <div class="card-img">
-                <img class="rounded-[12px] object-cover w-full h-[320px]" src="{{ asset('assets/all.jpg') }}" alt="">
+                <img class="rounded-[12px] object-cover w-full h-[320px]" 
+                     src="{{ $barangs[2]->foto_utama ? asset($barangs[2]->foto_utama) : asset('assets/all.jpg') }}" 
+                     alt="{{ $barangs[2]->nama_barang }}">
             </div>
             <div class="card-body mt-4">
                 <p class="font-semibold text-lg">{{ $barangs[2]->nama_barang }}</p>
@@ -56,5 +60,6 @@
             </div>
         </div>
         @endif
+        
     </div>
     

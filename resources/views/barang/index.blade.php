@@ -15,7 +15,7 @@
 </head>
 
 <body class="overflow-x-hidden">
-    <x-Navbar />
+    <x-NavbarAdmin />
 
     <div class="w-full h-[15px] bg-[#E3001A] mt-10"></div>
 

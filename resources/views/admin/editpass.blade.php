@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-gradient-to-b from-[#420008] to-[#000000]">
-    <x-Navbar />
+    <x-NavbarAdmin />
 
     <div class="w-full h-full my-[63px] mt-[20px] flex">
         <form action="{{ route('admin.updatePass', $admin->id_admin) }}" method="POST" class="relative w-[345px] flex flex-col m-auto h-[645px] bg-[#FFF] px-[32px] pt-[45px] gap-[40px] rounded-[12px]
