@@ -17,18 +17,18 @@
             </li>
             <li><a href="{{route('index.about')}}" class="py-2">About Us</a></li>
             <li><a href="{{route('index.kontak')}}" class="py-2 mr-2">Contacts</a></li>
+            <li>
+                @if (Auth::check())
+                    <!-- If user is logged in, link to the profile page -->
+                    <a href="{{ route('user.profile') }}" class="fa-regular fa-user bg-[#D9D9D9] text-[15px] p-[6px] mr-[10px] rounded-full"></a>
+                @else
+                    <!-- If user is not logged in, link to the login page -->
+                    <a href="{{ route('login') }}" class="fa-regular fa-user bg-[#D9D9D9] text-[15px] p-[6px] mr-[10px] rounded-full"></a>
+                @endif
+            </li>
+            
         </div>
-    </li>
-    <li><a href="#" class="py-2">About Us</a></li>
-    <li><a href="#" class="py-2 mr-2">Contacts</a></li>
 </ul>
-@if (session('admin_id'))
-            <a href="{{ route('admin.profile') }}" class="fa-regular fa-user bg-[#D9D9D9] text-[15px] p-[6px] mr-[10px] rounded-full pointer"></a>
-        @else
-            <a href="{{ route('login') }}" class="fa-regular fa-user bg-[#D9D9D9] text-[15px] p-[6px] mr-[10px] rounded-full pointer"></a>
-        @endif
-
-        <a href="{{route('loginuser')}}" class="fa-regular fa-user bg-[#D9D9D9] text-[15px] p-[6px] mr-[10px] rounded-full"></a>
     </div>
     <div id="sidebar">
         <div class="p-4">

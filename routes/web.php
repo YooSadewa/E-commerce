@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -9,9 +10,9 @@ Route::get('/', [BarangController::class, 'indexUser'])->name('welcome');
 
 Route::get('/admin', [BarangController::class, 'index'])->name('welcomeadmin');
 
-Route::get('/loginadmin', [AdminController::class,'indexlogin'])->name('login');
-
-Route::get('/login', [AdminController::class,'indexloginUser'])->name('loginuser');
+Route::get('login', [UserController::class, 'showLoginForm'])->name('login');
+Route::post('login', [UserController::class, 'login']);
+Route::post('logout', [UserController::class, 'logout'])->name('logout');
 
 Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
 
@@ -20,13 +21,14 @@ Route::post('/login/admin', [AdminController::class,'login']);
 Route::get('/admin/editprofile/{id}', [AdminController::class, 'edit'])->name('admin.editprofile');
 Route::put('/admin/editprofile/{id}', [AdminController::class, 'update'])->name('admin.update');
 
-Route::get('/signup', function () {
+Route::get('/signup', function () { 
     return view('signup');
 })->name('signup');
 
-Route::get('/profileuser', function () {
-    return view('profile/profile');
-})->name('profile');
+Route::get('/profileuser', [UserController::class, 'show'])->name('profileuser');
+Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile');
+
+Route::resource('profile', UserController::class);
 
 Route::resource('barang', BarangController::class);
 
@@ -49,3 +51,18 @@ Route::put('/admin/updatePass/{id}', [AdminController::class, 'updatePass'])->na
 
 Route::get('/about', [AdminController::class, 'indexAbout'])->name('index.about');
 Route::get('/kontak', [AdminController::class, 'indexKontak'])->name('index.kontak');
+
+Route::middleware('auth')->group(function() {
+    Route::get('user/{id}', [UserController::class, 'show'])->name('user.show');
+    Route::get('user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::put('user/{id}', [UserController::class, 'update'])->name('user.update');
+    
+    Route::get('user/{id}/password', [UserController::class, 'editPassword'])->name('user.editpass');
+    Route::put('user/{id}/password', [UserController::class, 'updatePassword'])->name('user.updatepass');
+    
+    Route::get('user/{id}/location', [UserController::class, 'editLocation'])->name('user.editLocation');
+    Route::put('user/{id}/location', [UserController::class, 'updateLocation'])->name('user.updateLocation');
+    
+    // Log out route
+    Route::post('logout', [UserController::class, 'logout'])->name('logout');
+});
