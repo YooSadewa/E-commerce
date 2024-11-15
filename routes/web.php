@@ -33,6 +33,8 @@ Route::resource('barang', BarangController::class);
 
 Route::get('/admin/{id_admin}', [AdminController::class, 'show'])->name('admin.show');
 
+Route::put('/barang/{id_barang}', [BarangController::class, 'update'])->name('barang.update');
+
 Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
 
 Route::get('/profile', [AdminController::class, 'show'])->name('profile');
