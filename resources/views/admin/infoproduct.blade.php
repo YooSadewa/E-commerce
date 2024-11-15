@@ -92,8 +92,17 @@
             </div>
         </div>
         <div class="w-full border-t-[2px] border-black bg-[#FFF] bottom-0 right-0 fixed">
-            <a href="{{ route('barang.edit', $barang->id_barang) }}" class="flex justify-center m-[20px] py-[7px] px-[25px] bg-[#FF0000] my-[9px] rounded-[24px] font-semibold text-[#FFF] md:text-[24px] md:py-[11px] md:px-[71px] md:my-[15px] md:m-[44px] md:rounded-[26px] lg:py-[16px] lg:px-[167px] lg:my-[22px] lg:m-[100px] lg:rounded-[42px] lg:text-[34px]">Edit Product</a>
-            <div class="w-full h-[15px] bg-[#E3001A]">
-        </div>
+            <div class="flex justify-center gap-4 mx-[20px] my-[10px]">
+                <a href="{{ route('barang.edit', $barang->id_barang) }}" 
+                   class="w-1/2 text-center py-[7px] px-[15px] bg-[#FF0000] rounded-[24px] font-semibold text-[#FFF] md:text-[20px] md:py-[11px] md:px-[40px] lg:py-[12px] lg:px-[80px] lg:text-[24px]">
+                    Beli Langsung
+                </a>
+                <button type="button" 
+                        class="w-1/2 text-center py-[7px] px-[15px] bg-[#FF0000] rounded-[24px] font-semibold text-[#FFF] md:text-[20px] md:py-[11px] md:px-[40px] lg:py-[12px] lg:px-[80px] lg:text-[24px]">
+                    Masukkan ke Troli
+                </button>
+            </div>
+            <div class="w-full h-[15px] bg-[#E3001A]"></div>
+         </div>
     </body>
 </html>

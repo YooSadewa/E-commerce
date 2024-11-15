@@ -4,9 +4,8 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [BarangController::class, 'indexUser'])->name('welcome');
 
 Route::get('/admin', [BarangController::class, 'index'])->name('welcomeadmin');
 
@@ -25,8 +24,8 @@ Route::get('/signup', function () {
     return view('signup');
 })->name('signup');
 
-Route::get('/admin/profile', function () {
-    return view('admin/profile');
+Route::get('/profileuser', function () {
+    return view('profile/profile');
 })->name('profile');
 
 Route::resource('barang', BarangController::class);

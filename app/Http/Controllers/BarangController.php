@@ -16,6 +16,14 @@ class BarangController extends Controller
 
         return view('welcomeadmin', compact('barangs')); // Ganti 'your_view_name' dengan nama view yang sesuai
     }
+
+    public function indexUser()
+    {
+        // Mengambil semua barang dari database
+        $barangs = Barang::all(); 
+
+        return view('welcome', compact('barangs')); // Ganti 'your_view_name' dengan nama view yang sesuai
+    }
     
     public function showCategory($category)
     {

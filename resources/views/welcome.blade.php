@@ -18,21 +18,35 @@
     <x-Navbar />
 
     <div class="content">
-        <div class="relative mt-[100px] flex justify-center">
-            <input
-                type="text"
-                id="search"
-                placeholder=" "
-                class="peer w-full px-4 py-2 border rounded-lg shadow-sm focus:border-blue-500 focus:outline-none" />
-            <label for="search" class="absolute top-0 text-gray-500 transition-transform transform -translate-y-1 scale-75 origin-top-left peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-3 peer-placeholder-shown:text-gray-400 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-black-500 ">
-                <p class="text-[13px]">Search products</p>
-            </label>
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <div class="cart bg-white flex ml-[4px] w-[40px] h-[40px] rounded-full">
-                <button type="submit"><i class="fa-solid fa-cart-shopping"></i></button>
+        <form action="{{ route('product.search') }}" method="GET">
+            <div class="relative mt-[100px] flex justify-center">
+                <input
+                    type="text"
+                    id="search"
+                    placeholder=" "
+                    name="search"
+                    class="peer w-full px-4 py-2 border rounded-lg shadow-sm focus:border-blue-500 focus:outline-none" />
+                <label for="search" class="absolute top-0 text-gray-500 transition-transform transform -translate-y-1 scale-75 origin-top-left peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-3 peer-placeholder-shown:text-gray-400 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-black-500 ">
+                    <p class="text-[13px]">Search products</p>
+                </label>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="cart bg-white flex ml-[4px] w-[40px] h-[40px] rounded-full">
+                    <button type="submit"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
             </div>
-        </div>
+            </form>
     </div>
+
+    @if ($errors->any())
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 
     <div class="">
         <div class="carousel mt-6">
@@ -61,9 +75,9 @@
         <div class="maha5 flex justify-center mt-3">
             <h1 class="text-[16px] font-sans:inter font-medium sm:text-[20px] md:text-[28px] lg:text-[35px] xl:text-[40px]">Official Collaboration MAHA5 Fantech</h1>
         </div>
-
-        {{-- <x-card /> --}}
-       
+        
+        <x-carduser :barangs="$barangs" />
+    </div>
     <x-Footer />
 </body>
 
