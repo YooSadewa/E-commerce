@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -40,7 +41,11 @@ Route::get('/profile', [AdminController::class, 'show'])->name('profile');
 
 Route::get('/infoproduct/{id_barang}', [BarangController::class, 'show'])->name('infoproduct.show');
 
+Route::get('/infoproductuser/{id_barang}', [BarangController::class, 'showuser'])->name('infoproductuser.show');
+
 Route::get('/category/{category}', [BarangController::class, 'showCategory'])->name('category.show');
+
+Route::get('/categoryuser/{category}', [BarangController::class, 'showCategoryUser'])->name('categoryuser.show');
 
 Route::get('/search', [BarangController::class, 'indexSearch'])->name('product.search');
 
@@ -49,3 +54,5 @@ Route::put('/admin/updatePass/{id}', [AdminController::class, 'updatePass'])->na
 
 Route::get('/about', [AdminController::class, 'indexAbout'])->name('index.about');
 Route::get('/kontak', [AdminController::class, 'indexKontak'])->name('index.kontak');
+
+Route::get('/cart', [UserController::class, 'showCart'])->name('cart');

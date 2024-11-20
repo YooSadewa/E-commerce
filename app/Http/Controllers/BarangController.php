@@ -31,6 +31,12 @@ class BarangController extends Controller
         return view('category', compact('barangs', 'category'));
     }
 
+    public function showCategoryUser($category)
+    {
+        $barangs = DB::table('tb_barang')->where('kategori', $category)->get();
+        return view('categoryuser', compact('barangs', 'category'));
+    }
+
     public function indexSearch(Request $request)
     {
         $search = $request->input('search'); // Mendapatkan input pencarian
@@ -48,6 +54,14 @@ class BarangController extends Controller
 
         // Tampilkan ke view infoproduct.blade.php
         return view('admin.infoproduct', ['barang' => $barang]);
+    }
+
+    public function showuser($id_barang)
+    {
+        $barang = DB::table('tb_barang')->where('id_barang', $id_barang)->first();
+
+        // Tampilkan ke view infoproduct.blade.php
+        return view('barang.infoproduct', ['barang' => $barang]);
     }
 
     public function create()

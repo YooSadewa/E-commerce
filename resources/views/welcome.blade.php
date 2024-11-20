@@ -31,7 +31,7 @@
                 </label>
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <div class="cart bg-white flex ml-[4px] w-[40px] h-[40px] rounded-full">
-                    <button type="submit"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <a href="{{route('cart')}}"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
             </div>
             </form>

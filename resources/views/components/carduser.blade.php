@@ -25,7 +25,7 @@
                     <p class="text-xs text-gray-500 mt-1">10rb+ Terjual</p>
                 </div>
                 <div class="card-footer mt-4">
-                    <a href="{{ route('infoproduct.show', $barang->id_barang) }}" class="block bg-red-500 text-white text-center py-2 rounded-lg font-bold text-[12px] md:text-[16px]">
+                    <a href="{{ route('infoproductuser.show', $barang->id_barang) }}" class="block bg-red-500 text-white text-center py-2 rounded-lg font-bold text-[12px] md:text-[16px]">
                         Detail Product
                     </a>
                 </div>
@@ -54,7 +54,7 @@
                 <p class="text-xs text-gray-500 mt-1">10rb+ Terjual</p>
             </div>
             <div class="card-footer mt-[223px] md:mt-[229px]">
-                <a href="{{ route('infoproduct.show', $barangs[2]->id_barang) }}" class="block bg-red-500 text-white text-center py-2 rounded-lg font-bold text-[12px] md:text-[16px]">
+                <a href="{{ route('infoproductuser.show', $barangs[2]->id_barang) }}" class="block bg-red-500 text-white text-center py-2 rounded-lg font-bold text-[12px] md:text-[16px]">
                     Detail Product
                 </a>
             </div>
