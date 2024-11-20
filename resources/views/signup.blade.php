@@ -19,7 +19,7 @@
             <div class="bg-[#FFF] min-w-full h-[405px] md:h-[765px] lg:h-[565px] m-auto xl:ml-[200px] rounded-[15px] md:rounded-[24px]">
                 <img src="{{ asset('assets/logo.jpg') }}" alt="" class="mx-auto mt-[25px] md:mt-[47px] lg:mt-[17px] h-[26px] md:h-[49px] lg:h-[42px]">
                 <div class="w-[200px] md:w-[365px] lg:w-[315px] h-[40px] md:h-[70px] lg:h-[60px] bg-[#D9D9D9] font-bold mx-auto mt-[35px] md:mt-[65px] lg:mt-[20px] rounded-full flex flex-row items-center text-[15px] md:text-[24px]">
-                    <a href="{{route('loginuser')}}" class="flex-grow text-center">Log in</a>
+                    <a href="{{route('login')}}" class="flex-grow text-center">Log in</a>
                     <a href="#" class="w-[100px] md:w-[185px] lg:w-[160px] h-full bg-[#E3001A] text-white text-center items-center flex justify-center ml-0 rounded-full">Sign Up</a>
                 </div>
                 <form action="" class="flex flex-col justify-center mt-[30px] md:mt-[70px] lg:mt-[45px]">
