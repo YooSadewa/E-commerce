@@ -9,16 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('tb_admin', function (Blueprint $table) {
-            $table->increments('id_admin');
-            $table->string('nama_admin')->unique();
-            $table->string('username');
+            $table->id('id_admin');
+            $table->string('nama_admin');
+            $table->string('username')->unique();
             $table->string('password');
-            $table->string('email');
-            $table->integer('telp');
-            $table->binary('foto_admin');
+            $table->string('email')->unique();
+            $table->string('telp');
+            $table->string('foto_admin')->nullable();
             $table->timestamps();
         });
     }

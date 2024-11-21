@@ -110,28 +110,36 @@ class BarangController extends Controller
 
     public function update(Request $request, $id)
     {
-        $barang = Barang::findOrFail($id);
-    
-        // Validation without 'foto_utama'
-        $validated = $request->validate([
-            'nama_barang' => 'required|unique:tb_barang,nama_barang,' . $id . ',id_barang',
-            'harga_barang' => 'required|numeric|min:1',  // Add numeric validation
-            'stok' => 'required|integer|min:1',           // Ensure the stock is a positive integer
-            'deskripsi_barang' => 'required',
+        // Validate input
+        $validatedData = $request->validate([
+            'nama_barang' => 'required|string|max:255',
+            'harga_barang' => 'required|numeric|min:0',
+            'stok' => 'required|integer|min:0',
+            'deskripsi_barang' => 'nullable|string',
+            'kategori' => 'nullable|string|max:100',
+            'foto_utama' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
-        
-    
-        // Only update fields that were sent in the form
-        $barang->nama_barang = $validated['nama_barang'];
-        $barang->harga_barang = $validated['harga_barang'];
-        $barang->stok = $validated['stok'];
-        $barang->deskripsi_barang = $validated['deskripsi_barang'];
 
-        // Save the updated data
-        $barang->save();
-    
+        // Find the barang
+        $barang = Barang::findOrFail($id);
+
+        // Handle file upload for foto_utama
+        if ($request->hasFile('foto_utama')) {
+            // Delete old image if exists
+            if ($barang->foto_utama && Storage::exists($barang->foto_utama)) {
+                Storage::delete($barang->foto_utama);
+            }
+
+            // Store new image
+            $fotoPath = $request->file('foto_utama')->store('barang_images', 'public');
+            $validatedData['foto_utama'] = $fotoPath;
+        }
+
+        // Update the barang
+        $barang->update($validatedData);
+
         // Redirect with success message
-        return redirect()->route('barang.index')->with('success', 'Barang berhasil diperbarui.');
+        return redirect()->route('barang.index')->with('success', 'Barang berhasil diupdate');
     }
 
     public function destroy($id)

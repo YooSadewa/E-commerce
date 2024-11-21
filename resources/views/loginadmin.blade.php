@@ -24,7 +24,7 @@
                 <div class="w-[200px] md:w-[365px] lg:w-[315px] h-[40px] md:h-[70px] lg:h-[60px] bg-[#D9D9D9] font-bold mx-auto mt-[35px] md:mt-[65px] lg:mt-[20px] rounded-full flex flex-row items-center text-[15px] md:text-[24px]">
                     <a class="w-full h-full bg-[#E3001A] text-white text-center items-center flex justify-center ml-0 rounded-full">Log in</a>
                 </div>
-                <form action="{{ url('/login/admin') }}" method="POST" class="flex flex-col justify-center mt-[30px] md:mt-[105px] lg:mt-[75px]">
+                <form action="{{ route('admin.login') }}" method="POST" class="flex flex-col justify-center mt-[30px] md:mt-[105px] lg:mt-[75px]">
                     @csrf
                     <div class="relative px-[30px] md:px-[50px] mt-[20px] md:mt-0 mb-[40px] md:mb-[60px]">
                         <input type="text" id="username" name="username" class="peer border-b-[1px] border-black w-full placeholder-transparent focus:outline-none focus:border-blue-500 mt-[5px] md:text-[24px]" placeholder=" " required />

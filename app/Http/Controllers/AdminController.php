@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;    // Tambahkan ini untuk DB
 use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Session;
 use App\Models\Admin;
 
 class AdminController extends Controller
@@ -18,8 +19,13 @@ class AdminController extends Controller
 
     public function profile()
     {
-        $admins = Admin::all(); // Fetch all admins
-        return view('admin.profile', compact('admins'));
+        $admin = Admin::find(session('admin_id'));
+        
+        if (!$admin) {
+            return redirect()->route('loginadmin')->with('error', 'Admin tidak ditemukan');
+        }
+    
+        return view('admin.profile', compact('admin'));
     }
 
 
@@ -121,39 +127,44 @@ class AdminController extends Controller
     }
 }
     
-
-    public function indexlogin() {
-        return view("loginadmin");
+    public function showLoginForm()
+    {
+        return view('loginadmin');
     }
 
-    public function indexLoginUser() {
-        return view("login");
+    public function login(Request $request)
+{
+    $request->validate([
+        'username' => 'required',
+        'password' => 'required'
+    ]);
+
+    $admin = Admin::where('username', $request->username)
+        ->where('password', $request->password)
+        ->first();
+
+    if ($admin) {
+        // Successful login
+        Session::put('admin_id', $admin->id_admin);
+        Session::put('admin_name', $admin->nama_admin);
+
+        return redirect()->route('welcomeadmin')->with('success', 'Login successful');
     }
 
-    public function login(Request $request) {
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required',
-        ]);
-    
-        $admin = Admin::where('username', $request->username)
-                      ->where('password', $request->password)
-                      ->first();
-    
-        if ($admin) {
-            // Simpan informasi admin ke session
-            session(['admin_id' => $admin->id_admin]);
-            return redirect()->route('welcomeadmin');
-        } else {
-            return redirect('/login')->withErrors("Username atau password salah");
-        }
+    // Failed login
+    return back()->withErrors([
+        'username' => 'Invalid credentials'
+    ])->withInput($request->only('username'));
+}
+
+    public function logout()
+    {
+        Session::forget('admin_id');
+        Session::forget('admin_name');
+
+        return redirect()->route('loginadmin')->with('success', 'Logged out successfully');
     }
 
-    public function logout() {
-        session()->forget('admin_id');
-        return redirect()->route('welcomeadmin');
-    }
-    
     public function indexAbout() {
         return view('about');
     }
