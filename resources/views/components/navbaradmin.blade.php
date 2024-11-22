@@ -18,8 +18,8 @@
             <li><a href="{{route('index.about')}}" class="py-2">About Us</a></li>
             <li><a href="{{route('index.kontak')}}" class="py-2 mr-2">Contacts</a></li>
         </ul>
-        @if (session('admin_id'))
-            <a href="{{ route('admin.profile') }}" class="fa-regular fa-user bg-[#D9D9D9] text-[15px] p-[6px] mr-[10px] rounded-full pointer"></a>
+        @if (session('id_admin'))
+            <a href="{{ route('admin.profileadmin') }}   " class="fa-regular fa-user bg-[#D9D9D9] text-[15px] p-[6px] mr-[10px] rounded-full pointer"></a>
         @else
             <a href="{{ route('loginadmin') }}" class="fa-regular fa-user bg-[#D9D9D9] text-[15px] p-[6px] mr-[10px] rounded-full pointer"></a>
         @endif

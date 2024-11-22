@@ -14,16 +14,18 @@
     <x-NavbarAdmin />
     <div class="w-[345px] h-[480px] mx-auto mt-[120px] mb-[227px] md:w-[700px] lg:flex lg:w-[1000px] lg:gap-[100px]">
         @php
-            $admin = \App\Models\Admin::find(session('admin_id'));
+            $admin = \App\Models\Admin::find(session('id_admin'));
         @endphp
 
 <div class="lg:flex lg:flex-col">
         <h1 class="text-center text-[#FFF] font-semibold  md:text-[24px]">Profile</h1>
-        <img src="{{ asset('uploads/' . $admin->foto_admin) }}" alt="Foto Admin" class="w-[120px] h-[120px] m-auto rounded-full mt-[25px] md:w-[200px] md:h-[200px]">
-            @if ($admin)
-            <h5 class="text-center text-[#FFF] mt-[5px] text-[24px] md:mt-[15px] md:text-[26px]">{{$admin->nama_admin}}</h5>
-            <p class="text-center text-[#FFF] md:text-[20px]">{{$admin->telp}}</p>
-            @endif
+        @if ($admin)
+        <img src="{{ asset('uploads/' . ($admin->foto_admin ?? 'default.png')) }}" alt="Foto Admin" class="w-[120px] h-[120px] m-auto rounded-full mt-[25px] md:w-[200px] md:h-[200px]">
+    <h5 class="text-center text-[#FFF] mt-[5px] text-[24px] md:mt-[15px] md:text-[26px]">{{$admin->nama_admin}}</h5>
+    <p class="text-center text-[#FFF] md:text-[20px]">{{$admin->telp}}</p>
+@else
+    <p class="text-center text-[#FFF]">Admin tidak ditemukan.</p>
+@endif
         </div>
         <div class="flex flex-col mt-[75px] font-semibold md:text-[20px] justify-center">
             <a href="{{route('admin.editprofile', $admin->id_admin)}}" class="flex w-full h-[55px] bg-[#FFF] items-center gap-[25px] pl-[15px] rounded-[18px] mb-[5px] lg:w-[600px]">
@@ -38,12 +40,12 @@
                 <i class="fa-solid fa-arrow-up-from-bracket"></i>
                 <p>Add Product</p>
             </a>
-            <form action="{{ route('logout') }}" method="POST">
+            <form action="{{ route('admin.logout') }}" method="POST">
                 @csrf
                 <button type="submit" class= "w-full px-[55px] py-[10px] bg-[#E3001A] text-[#FFF] rounded-[36px] mt-[130px] md:mt-[30px] hidden md:hidden lg:flex lg:px-0 lg:justify-center">Log Out</button>
             </form>
         </div>
-        <form action="{{ route('logout') }}" method="POST">
+        <form action="{{ route('admin.logout') }}" method="POST">
             @csrf
             <button type="submit" class= "px-[55px] py-[10px] bg-[#E3001A] text-[#FFF] rounded-[36px] mt-[130px] md:mt-[30px] lg:hidden">Log Out</button>
         </form>

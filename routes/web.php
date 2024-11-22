@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\Admin;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/admin/profileadmin', [AdminController::class, 'profile'])->name('admin.profileadmin');
 
 Route::get('/', [BarangController::class, 'indexUser'])->name('welcome');
 
@@ -14,9 +15,9 @@ Route::get('/admin', [BarangController::class, 'index'])->name('welcomeadmin');
 // Route::post('login', [UserController::class, 'login']);
 // Route::post('logout', [UserController::class, 'logout'])->name('logout');
 
-Route::get('/loginadmin', [AdminController::class, 'showLoginForm'])->name('loginadmin');
-Route::post('/loginadmin', [AdminController::class, 'login'])->name('admin.login');
-Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
+Route::get('/admin/loginadmin', [AdminController::class, 'showLoginForm'])->name('loginadmin');
+Route::post('admin/loginadmin', [AdminController::class, 'login'])->name('admin.login');
+Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
 Route::get('/admin/editprofile/{id}', [AdminController::class, 'edit'])->name('admin.editprofile');
 Route::put('/admin/editprofile/{id}', [AdminController::class, 'update'])->name('admin.update');
@@ -36,8 +37,6 @@ Route::get('/admin/{id_admin}', [AdminController::class, 'show'])->name('admin.s
 
 Route::put('/barang/{id}', [BarangController::class, 'update'])->name('barang.update');
 
-Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
-
 Route::get('/infoproduct/{id_barang}', [BarangController::class, 'show'])->name('infoproduct.show');
 
 Route::get('/infoproductuser/{id_barang}', [BarangController::class, 'showuser'])->name('infoproductuser.show');
@@ -53,6 +52,8 @@ Route::put('/admin/updatePass/{id}', [AdminController::class, 'updatePass'])->na
 
 Route::get('/about', [AdminController::class, 'indexAbout'])->name('index.about');
 Route::get('/kontak', [AdminController::class, 'indexKontak'])->name('index.kontak');
+
+
 
 // Route::get('/cart', [UserController::class, 'showCart'])->name('cart');
 // Route::middleware('auth')->group(function() {
